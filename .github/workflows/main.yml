@@ -41,4 +41,4 @@ jobs:
           git config --local user.email "@gmail.com"
           git config --local user.name "Twodragon"
           git commit -m "Update README.md"
-          git push origin +master
+          git push origin +main
