@@ -260,7 +260,7 @@ markdown_text = """
 
 ## Recent blog posts
 """
-    
+
     for post in posts:
         # HTML 이스케이프는 이미 처리되었으므로 안전하게 사용
         markdown_text += f"<a href=\"{post['link']}\"> {post['title']} </a> <br>\n"
