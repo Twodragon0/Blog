@@ -276,7 +276,7 @@ A curious researcher on future development through IT | DevSecOps Engineer | Clo
 ### 📝 Recent Blog Posts
 
 """
-
+    
     for idx, post in enumerate(posts, 1):
         # HTML 이스케이프는 이미 처리되었으므로 안전하게 사용
         markdown_text += f"{idx}. [{post['title']}]({post['link']})\n"
