@@ -15,9 +15,13 @@ import datetime
 import sys
 import logging
 import html
+import time
+import socket
 from pathlib import Path
 from typing import List, Dict, Optional
 from urllib.parse import urlparse
+from urllib.request import Request, urlopen
+from urllib.error import URLError, HTTPError
 
 # 로깅 설정
 logging.basicConfig(
@@ -31,6 +35,16 @@ ALLOWED_DOMAINS = ['twodragon.tistory.com', '2twodragon.com']
 
 # 최대 수집할 포스트 수
 MAX_POSTS = 30
+
+# 네트워크 타임아웃 설정 (초)
+REQUEST_TIMEOUT = 30
+
+# 재시도 설정
+MAX_RETRIES = 3
+RETRY_DELAY = 2  # 초
+
+# User-Agent 설정 (일부 서버에서 User-Agent가 없으면 차단할 수 있음)
+USER_AGENT = 'Mozilla/5.0 (compatible; BlogRSSCollector/1.0; +https://github.com/Twodragon0/Blog)'
 
 
 def validate_url(url: str) -> bool:
@@ -75,6 +89,7 @@ def sanitize_html(text: str) -> str:
 def fetch_blog_posts(blog_url: str) -> List[Dict[str, str]]:
     """
     블로그 RSS 피드에서 포스트 목록을 가져옵니다.
+    재시도 로직과 타임아웃 처리가 포함되어 있습니다.
     
     Args:
         blog_url: 블로그 URL
@@ -89,16 +104,59 @@ def fetch_blog_posts(blog_url: str) -> List[Dict[str, str]]:
     rss_url = f"{blog_url}/rss"
     logger.info(f"RSS 피드 수집 중: {rss_url}")
     
-    try:
-        feed = feedparser.parse(rss_url)
-        
-        # 피드 파싱 오류 확인
-        if feed.bozo and feed.bozo_exception:
-            logger.error(f"RSS 피드 파싱 오류: {feed.bozo_exception}")
+    # 재시도 로직
+    for attempt in range(MAX_RETRIES):
+        try:
+            # 타임아웃 설정을 위한 소켓 타임아웃
+            socket.setdefaulttimeout(REQUEST_TIMEOUT)
+            
+            # User-Agent를 포함한 요청 생성
+            request = Request(rss_url)
+            request.add_header('User-Agent', USER_AGENT)
+            request.add_header('Accept', 'application/rss+xml, application/xml, text/xml')
+            
+            # 피드 파싱 (feedparser가 내부적으로 요청 처리)
+            feed = feedparser.parse(rss_url)
+            
+            # 피드 파싱 오류 확인
+            if feed.bozo and feed.bozo_exception:
+                logger.warning(f"RSS 피드 파싱 오류 (시도 {attempt + 1}/{MAX_RETRIES}): {feed.bozo_exception}")
+                if attempt < MAX_RETRIES - 1:
+                    time.sleep(RETRY_DELAY * (attempt + 1))  # 지수 백오프
+                    continue
+                return []
+            
+            # 피드가 비어있는지 확인
+            if not feed.get('entries'):
+                logger.warning(f"RSS 피드에 항목이 없습니다: {rss_url}")
+                return []
+            
+            break  # 성공 시 루프 종료
+            
+        except (URLError, HTTPError) as e:
+            logger.warning(f"네트워크 오류 (시도 {attempt + 1}/{MAX_RETRIES}): {e}")
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(RETRY_DELAY * (attempt + 1))
+                continue
+            logger.error(f"RSS 피드 수집 실패: {rss_url}")
             return []
-        
-        posts = []
-        for entry in feed.get('entries', [])[:MAX_POSTS]:
+        except socket.timeout:
+            logger.warning(f"타임아웃 오류 (시도 {attempt + 1}/{MAX_RETRIES}): {rss_url}")
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(RETRY_DELAY * (attempt + 1))
+                continue
+            logger.error(f"RSS 피드 수집 타임아웃: {rss_url}")
+            return []
+        except Exception as e:
+            logger.error(f"예상치 못한 오류 (시도 {attempt + 1}/{MAX_RETRIES}): {e}")
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(RETRY_DELAY * (attempt + 1))
+                continue
+            return []
+    
+    # 피드 파싱이 성공했으므로 포스트 추출
+    posts = []
+    for entry in feed.get('entries', [])[:MAX_POSTS]:
             try:
                 # 필수 필드 확인
                 if 'link' not in entry or 'title' not in entry:
@@ -121,16 +179,12 @@ def fetch_blog_posts(blog_url: str) -> List[Dict[str, str]]:
                 }
                 posts.append(post)
                 
-            except Exception as e:
-                logger.error(f"포스트 처리 중 오류 발생: {e}")
-                continue
-        
-        logger.info(f"{len(posts)}개의 포스트 수집 완료")
-        return posts
-        
-    except Exception as e:
-        logger.error(f"RSS 피드 수집 중 오류 발생: {e}")
-        return []
+        except Exception as e:
+            logger.error(f"포스트 처리 중 오류 발생: {e}")
+            continue
+    
+    logger.info(f"{len(posts)}개의 포스트 수집 완료")
+    return posts
 
 
 def merge_and_sort_posts(posts_list: List[List[Dict[str, str]]]) -> List[Dict[str, str]]:
@@ -187,8 +241,12 @@ def generate_readme_content(posts: List[Dict[str, str]]) -> str:
 ###  🐱 github stats  
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=peterica&count_private=true&show_icons=true&theme=radical&include_all_commits=true&hide_border=true" alt="GitHub Stats" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=peterica&layout=compact&langs_count=8&theme=radical&hide_border=true" alt="Top Languages" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=peterica&count_private=true&show_icons=true&theme=radical&include_all_commits=true&hide_border=true&cache_seconds=86400" alt="GitHub Stats" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=peterica&layout=compact&langs_count=8&theme=radical&hide_border=true&cache_seconds=86400" alt="Top Languages" />
+</div>
+
+<div align="center">
+  <img src="https://github-readme-streak-stats.demolab.com/?user=peterica&theme=radical&hide_border=true&cache_seconds=86400" alt="GitHub Streak" />
 </div>
 
 ###  💁 About Me  
