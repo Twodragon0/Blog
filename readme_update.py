@@ -241,12 +241,12 @@ markdown_text = """
 ###  🐱 github stats  
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=peterica&show_icons=true&theme=radical&include_all_commits=true&count_private=true" alt="GitHub Stats" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=peterica&layout=compact&langs_count=8&theme=radical" alt="Top Languages" />
+  ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=peterica&show_icons=true&theme=radical&include_all_commits=true&count_private=true)
+  ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=peterica&layout=compact&langs_count=8&theme=radical)
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=peterica&theme=radical" alt="GitHub Streak" />
+  ![GitHub Streak](https://streak-stats.demolab.com/?user=peterica&theme=radical)
 </div>
 
 ###  💁 About Me  
