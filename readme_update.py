@@ -241,8 +241,8 @@ markdown_text = """
 ###  🐱 github stats  
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=peterica&show_icons=true&theme=radical&include_all_commits=true&count_private=true" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=peterica&layout=compact&langs_count=8&theme=radical" alt="Top Languages" />
+  <img src="https://stats.quine.sh/peterica/github?theme=dark" alt="GitHub Stats" />
+  <img src="https://stats.quine.sh/peterica/top-languages?theme=dark&layout=compact" alt="Top Languages" />
 </div>
 
 <div align="center">
