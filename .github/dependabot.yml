@@ -24,13 +24,14 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
-    # 보안 취약점은 즉시 업데이트
+    # 보안 취약점은 즉시 업데이트 (minor, patch 업데이트 그룹화)
     groups:
       security-updates:
         patterns:
           - "*"
         update-types:
-          - "security"
+          - "minor"
+          - "patch"
 
   # GitHub Actions 업데이트
   - package-ecosystem: "github-actions"
