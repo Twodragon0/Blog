@@ -16,14 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: read
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      
+          fetch-depth: 0  # 전체 히스토리 가져오기
+    
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -38,12 +37,28 @@ jobs:
       - name: Run blog post collector
         run: |
           python readme_update.py
+        continue-on-error: true
+      
+      - name: Check for changes
+        id: verify-changed-files
+        run: |
+          if [ -n "$(git status --porcelain README.md)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
       
       - name: Commit changes
+        if: steps.verify-changed-files.outputs.changed == 'true'
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add README.md
-          git diff --staged --quiet || git commit -m "chore: update README with latest blog posts [skip ci]"
-          git push
+          git commit -m "chore: update README with latest blog posts [skip ci]"
+          git push origin main
+      
+      - name: No changes
+        if: steps.verify-changed-files.outputs.changed == 'false'
+        run: |
+          echo "No changes to README.md. Skipping commit."
 
