@@ -126,12 +126,21 @@ def merge_repository_into_consolidated(owner: str, source_repo: str, target_repo
             logger.error(f"❌ 소스 저장소 클론 실패: {result.stderr}")
             return False
         
+        # 원래 작업 디렉토리 저장
+        original_cwd = os.getcwd()
+        
         # 통합 저장소로 이동
         os.chdir(consolidated_path)
         
         # 소스 저장소를 subtree로 추가
+        # 먼저 README가 있으면 제거 (충돌 방지)
+        readme_path = consolidated_path / "README.md"
+        if readme_path.exists():
+            subprocess.run(['git', 'rm', 'README.md'], cwd=consolidated_path, capture_output=True)
+            subprocess.run(['git', 'commit', '-m', 'Remove default README before merge'], cwd=consolidated_path, capture_output=True)
+        
         subtree_cmd = f"git subtree add --prefix={subdirectory} {source_path} main --squash"
-        result = subprocess.run(subtree_cmd, shell=True, capture_output=True, text=True)
+        result = subprocess.run(subtree_cmd, shell=True, capture_output=True, text=True, cwd=consolidated_path)
         
         if result.returncode == 0:
             # 푸시
@@ -152,13 +161,18 @@ def merge_repository_into_consolidated(owner: str, source_repo: str, target_repo
         logger.error(f"❌ 저장소 통합 중 오류: {e}")
         return False
     finally:
+        # 원래 디렉토리로 복귀
+        try:
+            original_cwd = os.getcwd()
+            if '/tmp/github-consolidate' in original_cwd:
+                os.chdir('/Users/yong/Desktop/Blog')
+        except:
+            pass
         # 임시 디렉토리 정리
         try:
             subprocess.run(['rm', '-rf', str(temp_dir)], check=True)
         except:
             pass
-        # 원래 디렉토리로 복귀
-        os.chdir(Path.cwd())
 
 
 def archive_after_consolidation(owner: str, repo_name: str) -> bool:
