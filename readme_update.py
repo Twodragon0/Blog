@@ -236,7 +236,7 @@ def generate_readme_content(posts: List[Dict[str, str]]) -> str:
     Returns:
         생성된 마크다운 내용
     """
-markdown_text = """
+    markdown_text = """
 
 ###  🐱 github stats  
 
@@ -259,7 +259,7 @@ markdown_text = """
 <br>
 
 ## Recent blog posts
-"""
+    """
 
     for post in posts:
         # HTML 이스케이프는 이미 처리되었으므로 안전하게 사용
