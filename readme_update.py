@@ -157,28 +157,28 @@ def fetch_blog_posts(blog_url: str) -> List[Dict[str, str]]:
     # 피드 파싱이 성공했으므로 포스트 추출
     posts = []
     for entry in feed.get('entries', [])[:MAX_POSTS]:
-            try:
-                # 필수 필드 확인
-                if 'link' not in entry or 'title' not in entry:
-                    logger.warning("필수 필드(link, title)가 없는 항목 건너뜀")
-                    continue
-                
-                # HTML 이스케이프 처리
-                title = sanitize_html(entry['title'])
-                link = entry['link']
-                
-                # 링크 URL 검증
-                if not validate_url(link):
-                    logger.warning(f"유효하지 않은 링크 URL: {link}")
-                    continue
-                
-                post = {
-                    'title': title,
-                    'link': link,
-                    'published': entry.get('published', '')
-                }
-                posts.append(post)
-                
+        try:
+            # 필수 필드 확인
+            if 'link' not in entry or 'title' not in entry:
+                logger.warning("필수 필드(link, title)가 없는 항목 건너뜀")
+                continue
+            
+            # HTML 이스케이프 처리
+            title = sanitize_html(entry['title'])
+            link = entry['link']
+            
+            # 링크 URL 검증
+            if not validate_url(link):
+                logger.warning(f"유효하지 않은 링크 URL: {link}")
+                continue
+            
+            post = {
+                'title': title,
+                'link': link,
+                'published': entry.get('published', '')
+            }
+            posts.append(post)
+            
         except Exception as e:
             logger.error(f"포스트 처리 중 오류 발생: {e}")
             continue
