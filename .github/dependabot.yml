@@ -8,8 +8,6 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 10
-    reviewers:
-      - "peterica"
     labels:
       - "dependencies"
       - "python"
@@ -41,8 +39,6 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "peterica"
     labels:
       - "dependencies"
       - "github-actions"
