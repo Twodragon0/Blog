@@ -21,7 +21,7 @@
 <br>
 
 ## Recent blog posts
-<a href="https://twodragon.tistory.com/706"> 클라우드 시큐리티 과정 8기 5주차: AWS Control Tower/SCP 기반 거버넌스 및 Datadog SIEM, Cloudflare 보안 </a> <br>
+    <a href="https://twodragon.tistory.com/706"> 클라우드 시큐리티 과정 8기 5주차: AWS Control Tower/SCP 기반 거버넌스 및 Datadog SIEM, Cloudflare 보안 </a> <br>
 <a href="https://twodragon.tistory.com/705"> 클라우드 시큐리티 8기 4주차: 통합 보안 취약점 점검 및 ISMS-P 인증 대응 실무 </a> <br>
 <a href="https://twodragon.tistory.com/704"> [12월 컨퍼런스 회고] AWSKRUG, OWASP, Datadog으로 미리 보는 2025년: AI와 보안의 공존 </a> <br>
 <a href="https://twodragon.tistory.com/703"> 클라우드 시큐리티 8기 3주차: AWS FinOps 아키텍처부터 ISMS-P 보안 감사까지 완벽 공략! </a> <br>
