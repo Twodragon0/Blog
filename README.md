@@ -2,11 +2,9 @@
 
 ###  🐱 github stats  
 
-<div id="main" align="center">
-    <img src="https://github-readme-stats.vercel.app/api?username=peterica&count_private=true&show_icons=true&theme=radical"
-        style="height: auto; margin-left: 20px; margin-right: 20px; padding: 10px;"/>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=peterica&layout=compact"   
-        style="height: auto; margin-left: 20px; margin-right: 20px; padding: 10px;"/>
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=peterica&count_private=true&show_icons=true&theme=radical&include_all_commits=true&hide_border=true" alt="GitHub Stats" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=peterica&layout=compact&langs_count=8&theme=radical&hide_border=true" alt="Top Languages" />
 </div>
 
 ###  💁 About Me  
