@@ -1,0 +1,64 @@
+{
+  "total": 7,
+  "original": 4,
+  "forked": 3,
+  "by_category": {
+    "aws-security": [
+      "AWS"
+    ],
+    "iot": [
+      "esp32-openwrt",
+      "OpenWRT-IPFS"
+    ],
+    "security": [
+      "audit-points",
+      "prowler",
+      "DevSecOps"
+    ],
+    "automation": [
+      "Blog"
+    ]
+  },
+  "by_language": {
+    "Python": [
+      "AWS",
+      "esp32-openwrt",
+      "audit-points",
+      "prowler",
+      "Blog"
+    ],
+    "Shell": [
+      "OpenWRT-IPFS"
+    ],
+    "Go": [
+      "DevSecOps"
+    ]
+  },
+  "recommendations": [
+    {
+      "action": "archive",
+      "repos": [
+        "audit-points",
+        "prowler",
+        "DevSecOps"
+      ],
+      "reason": "포크된 저장소는 원본 저장소를 참조하므로 Archive 처리 권장"
+    },
+    {
+      "action": "consolidate",
+      "repos": [
+        "esp32-openwrt",
+        "OpenWRT-IPFS"
+      ],
+      "reason": "IoT 관련 저장소들을 하나의 monorepo로 통합 고려",
+      "suggested_name": "iot-projects"
+    },
+    {
+      "action": "organize",
+      "repos": [
+        "AWS"
+      ],
+      "reason": "AWS 관련 저장소들을 별도 조직 또는 태그로 정리"
+    }
+  ]
+}

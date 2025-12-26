@@ -48,13 +48,17 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Twodragon0&theme=radical&hide_border=true" alt="GitHub Activity Graph" />
 </div>
 
-### 📝 Recent Blog Posts
+### 📦 Featured Repositories
 
-1. [클라우드 시큐리티 과정 8기 5주차: AWS Control Tower/SCP 기반 거버넌스 및 Datadog SIEM, Cloudflare 보안](https://twodragon.tistory.com/706)
-2. [클라우드 시큐리티 8기 4주차: 통합 보안 취약점 점검 및 ISMS-P 인증 대응 실무](https://twodragon.tistory.com/705)
-3. [[12월 컨퍼런스 회고] AWSKRUG, OWASP, Datadog으로 미리 보는 2025년: AI와 보안의 공존](https://twodragon.tistory.com/704)
-4. [클라우드 시큐리티 8기 3주차: AWS FinOps 아키텍처부터 ISMS-P 보안 감사까지 완벽 공략!](https://twodragon.tistory.com/703)
-5. [클라우드 시큐리티 8기 2주차: AWS 보안 아키텍처의 핵심, VPC부터 GuardDuty까지 완벽 정복!](https://twodragon.tistory.com/705)
+<div align="center">
+  
+[![AWS IAM Policies](https://github-readme-stats.vercel.app/api/pin/?username=Twodragon0&repo=AWS&theme=radical)](https://github.com/Twodragon0/AWS)
+[![Blog RSS Collector](https://github-readme-stats.vercel.app/api/pin/?username=Twodragon0&repo=Blog&theme=radical)](https://github.com/Twodragon0/Blog)
+[![ESP32 OpenWrt](https://github-readme-stats.vercel.app/api/pin/?username=Twodragon0&repo=esp32-openwrt&theme=radical)](https://github.com/Twodragon0/esp32-openwrt)
+
+</div>
+
+### 📝 Recent Blog Posts
 
 ---
 

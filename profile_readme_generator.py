@@ -119,6 +119,16 @@ def generate_profile_readme() -> str:
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Twodragon0&theme=radical&hide_border=true" alt="GitHub Activity Graph" />
 </div>
 
+### 📦 Featured Repositories
+
+<div align="center">
+  
+[![AWS IAM Policies](https://github-readme-stats.vercel.app/api/pin/?username=Twodragon0&repo=AWS&theme=radical)](https://github.com/Twodragon0/AWS)
+[![Blog RSS Collector](https://github-readme-stats.vercel.app/api/pin/?username=Twodragon0&repo=Blog&theme=radical)](https://github.com/Twodragon0/Blog)
+[![ESP32 OpenWrt](https://github-readme-stats.vercel.app/api/pin/?username=Twodragon0&repo=esp32-openwrt&theme=radical)](https://github.com/Twodragon0/esp32-openwrt)
+
+</div>
+
 ### 📝 Recent Blog Posts
 
 """
