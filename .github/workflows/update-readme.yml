@@ -1,0 +1,49 @@
+name: Update README with Blog Posts
+
+on:
+  schedule:
+    # 매일 한국시간 오전 9시에 실행 (UTC 00:00)
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 수동 실행 가능
+  push:
+    branches:
+      - main
+    paths:
+      - 'readme_update.py'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run blog post collector
+        run: |
+          python readme_update.py
+      
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git diff --staged --quiet || git commit -m "chore: update README with latest blog posts [skip ci]"
+          git push
+

@@ -1,0 +1,5 @@
+# Blog RSS Feed Collector Dependencies
+# 보안을 위해 정기적으로 업데이트하세요 (Dependabot 사용 권장)
+
+feedparser>=6.0.11
+

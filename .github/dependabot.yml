@@ -1,0 +1,52 @@
+version: 2
+updates:
+  # Python 의존성 업데이트
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "peterica"
+    labels:
+      - "dependencies"
+      - "python"
+      - "security"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    # 보안 업데이트는 자동 병합
+    allow:
+      - dependency-type: "security"
+    # 개발 의존성은 별도 관리
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    # 보안 취약점은 즉시 업데이트
+    groups:
+      security-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "security"
+
+  # GitHub Actions 업데이트
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "peterica"
+    labels:
+      - "dependencies"
+      - "github-actions"
+      - "security"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
