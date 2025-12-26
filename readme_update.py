@@ -241,8 +241,9 @@ markdown_text = """
 ###  🐱 github stats  
 
 <div align="center">
-  <img src="https://stats.quine.sh/peterica/github?theme=dark" alt="GitHub Stats" />
-  <img src="https://stats.quine.sh/peterica/top-languages?theme=dark&layout=compact" alt="Top Languages" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=peterica&theme=radical" alt="GitHub Profile Details" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=peterica&theme=radical" alt="Top Languages" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=peterica&theme=radical" alt="Most Commit Language" />
 </div>
 
 <div align="center">
