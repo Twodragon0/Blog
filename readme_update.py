@@ -236,35 +236,55 @@ def generate_readme_content(posts: List[Dict[str, str]]) -> str:
     Returns:
         생성된 마크다운 내용
     """
-markdown_text = """
+    markdown_text = """
+# Hi there, I'm Twodragon 👋
 
-###  🐱 github stats  
+A curious researcher on future development through IT | DevSecOps Engineer | Cloud Security Specialist
+
+### 🐱 GitHub Stats
 
 <div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=peterica&theme=radical" alt="GitHub Profile Details" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=peterica&theme=radical" alt="Top Languages" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=peterica&theme=radical" alt="Most Commit Language" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Twodragon0&theme=radical" alt="GitHub Profile Details" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Twodragon0&theme=radical" alt="Top Languages" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Twodragon0&theme=radical" alt="Most Commit Language" />
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=peterica&theme=radical" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com/?user=Twodragon0&theme=radical" alt="GitHub Streak" />
 </div>
 
-###  💁 About Me  
+### 💁 About Me
+
 <p align="center">
-    <a href="https://twodragon.tistory.com/"><img src="https://img.shields.io/badge/Blog-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
-    <a href="https://2twodragon.com/"><img src="https://img.shields.io/badge/Blog-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
-    <a href="mailto:twodragon114@gmail.com"><img src="https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=ilovefran.ofm@gmail.com"/></a>
+  <a href="https://twodragon.tistory.com/"><img src="https://img.shields.io/badge/Blog-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
+  <a href="https://2twodragon.com/"><img src="https://img.shields.io/badge/Blog-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
+  <a href="mailto:twodragon114@gmail.com"><img src="https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white"/></a>
+  <a href="https://github.com/Twodragon0"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/></a>
 </p>
 
-<br>
+### 🛠️ Tech Stack
 
-## Recent blog posts
-    """
+<p align="center">
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=Amazon-AWS&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=Kubernetes&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Terraform-623CE4?style=flat-square&logo=Terraform&logoColor=white"/>
+  <img src="https://img.shields.io/badge/DevSecOps-000000?style=flat-square&logo=GitLab&logoColor=white"/>
+</p>
 
-    for post in posts:
+### 📝 Recent Blog Posts
+
+"""
+
+    for idx, post in enumerate(posts, 1):
         # HTML 이스케이프는 이미 처리되었으므로 안전하게 사용
-        markdown_text += f"<a href=\"{post['link']}\"> {post['title']} </a> <br>\n"
+        markdown_text += f"{idx}. [{post['title']}]({post['link']})\n"
+    
+    markdown_text += "\n---\n\n"
+    markdown_text += "<p align=\"center\">\n"
+    markdown_text += "  <i>Last updated: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S KST") + "</i>\n"
+    markdown_text += "</p>\n"
     
     return markdown_text
 

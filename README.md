@@ -1,28 +1,30 @@
 
+# Blog RSS Feed Collector
 
-###  🐱 github stats  
+> 자동화된 블로그 포스트 수집 및 README 업데이트 시스템
 
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=peterica&theme=radical" alt="GitHub Profile Details" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=peterica&theme=radical" alt="Top Languages" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=peterica&theme=radical" alt="Most Commit Language" />
-</div>
+이 프로젝트는 여러 블로그의 RSS 피드를 수집하여 GitHub README를 자동으로 업데이트하는 Python 스크립트입니다.
 
-<div align="center">
-  <img src="https://streak-stats.demolab.com/?user=peterica&theme=radical" alt="GitHub Streak" />
-</div>
+## ✨ Features
 
-###  💁 About Me  
-<p align="center">
-    <a href="https://twodragon.tistory.com/"><img src="https://img.shields.io/badge/Blog-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
-    <a href="https://2twodragon.com/"><img src="https://img.shields.io/badge/Blog-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
-    <a href="mailto:twodragon114@gmail.com"><img src="https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=ilovefran.ofm@gmail.com"/></a>
-</p>
+- 🔄 **자동 RSS 피드 수집**: 여러 블로그에서 최신 포스트 자동 수집
+- 🔒 **보안 강화**: URL 검증, HTML 이스케이프, 입력 검증
+- ⚡ **재시도 로직**: 네트워크 오류 시 자동 재시도 (Exponential Backoff)
+- 📊 **GitHub Stats**: 프로필 통계 자동 표시
+- 🤖 **GitHub Actions**: 매일 자동으로 README 업데이트
 
-<br>
+## 🚀 Quick Start
 
-## Recent blog posts
-    <a href="https://twodragon.tistory.com/706"> 클라우드 시큐리티 과정 8기 5주차: AWS Control Tower/SCP 기반 거버넌스 및 Datadog SIEM, Cloudflare 보안 </a> <br>
+```bash
+# 의존성 설치
+pip install -r requirements.txt
+
+# 스크립트 실행
+python readme_update.py
+```
+
+## 📝 Recent Blog Posts
+<a href="https://twodragon.tistory.com/706"> 클라우드 시큐리티 과정 8기 5주차: AWS Control Tower/SCP 기반 거버넌스 및 Datadog SIEM, Cloudflare 보안 </a> <br>
 <a href="https://twodragon.tistory.com/705"> 클라우드 시큐리티 8기 4주차: 통합 보안 취약점 점검 및 ISMS-P 인증 대응 실무 </a> <br>
 <a href="https://twodragon.tistory.com/704"> [12월 컨퍼런스 회고] AWSKRUG, OWASP, Datadog으로 미리 보는 2025년: AI와 보안의 공존 </a> <br>
 <a href="https://twodragon.tistory.com/703"> 클라우드 시큐리티 8기 3주차: AWS FinOps 아키텍처부터 ISMS-P 보안 감사까지 완벽 공략! </a> <br>
