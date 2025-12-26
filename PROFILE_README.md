@@ -1,75 +1,4 @@
-#!/usr/bin/env python3
-"""
-GitHub Profile README 생성 스크립트
-Twodragon0 프로필 페이지용 README.md를 생성합니다.
-"""
-
-import feedparser
-import datetime
-import logging
-import html
-from typing import List, Dict
-
-# 로깅 설정
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
-
-# 허용된 블로그 도메인
-ALLOWED_DOMAINS = ['twodragon.tistory.com', '2twodragon.com']
-MAX_POSTS = 5  # 프로필 페이지에는 최근 5개만 표시
-
-
-def fetch_recent_posts() -> List[Dict[str, str]]:
-    """최근 블로그 포스트를 가져옵니다."""
-    posts = []
-    blog_urls = [
-        "https://twodragon.tistory.com",
-        "https://2twodragon.com"
-    ]
-    
-    for blog_url in blog_urls:
-        try:
-            rss_url = f"{blog_url}/rss"
-            feed = feedparser.parse(rss_url)
-            
-            if feed.bozo and feed.bozo_exception:
-                logger.warning(f"RSS 피드 파싱 오류: {feed.bozo_exception}")
-                continue
-            
-            for entry in feed.get('entries', [])[:MAX_POSTS]:
-                if 'link' in entry and 'title' in entry:
-                    posts.append({
-                        'title': html.escape(entry['title']),
-                        'link': entry['link'],
-                        'published': entry.get('published', '')
-                    })
-        except Exception as e:
-            logger.error(f"블로그 포스트 수집 중 오류: {e}")
-    
-    # 날짜순 정렬 (최신순)
-    def get_sort_key(post):
-        try:
-            if post.get('published'):
-                return datetime.datetime.strptime(
-                    post['published'], 
-                    "%a, %d %b %Y %H:%M:%S %z"
-                )
-        except (ValueError, KeyError):
-            pass
-        return datetime.datetime.min
-    
-    posts.sort(key=get_sort_key, reverse=True)
-    return posts[:MAX_POSTS]
-
-
-def generate_profile_readme() -> str:
-    """GitHub 프로필 README 내용을 생성합니다."""
-    posts = fetch_recent_posts()
-    
-    readme = """# Hi there, I'm Twodragon 👋
+# Hi there, I'm Twodragon 👋
 
 > A curious researcher on future development through IT | DevSecOps Engineer | Cloud Security Specialist
 
@@ -121,22 +50,15 @@ def generate_profile_readme() -> str:
 
 ### 📝 Recent Blog Posts
 
-"""
-    
-    for idx, post in enumerate(posts, 1):
-        readme += f"{idx}. [{post['title']}]({post['link']})\n"
-    
-    readme += "\n---\n\n"
-    readme += "<p align=\"center\">\n"
-    readme += f"  <i>Last updated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S KST')}</i>\n"
-    readme += "</p>\n"
-    
-    return readme
+1. [클라우드 시큐리티 과정 8기 5주차: AWS Control Tower/SCP 기반 거버넌스 및 Datadog SIEM, Cloudflare 보안](https://twodragon.tistory.com/706)
+2. [클라우드 시큐리티 8기 4주차: 통합 보안 취약점 점검 및 ISMS-P 인증 대응 실무](https://twodragon.tistory.com/705)
+3. [[12월 컨퍼런스 회고] AWSKRUG, OWASP, Datadog으로 미리 보는 2025년: AI와 보안의 공존](https://twodragon.tistory.com/704)
+4. [클라우드 시큐리티 8기 3주차: AWS FinOps 아키텍처부터 ISMS-P 보안 감사까지 완벽 공략!](https://twodragon.tistory.com/703)
+5. [클라우드 시큐리티 8기 2주차: AWS 보안 아키텍처의 핵심, VPC부터 GuardDuty까지 완벽 정복!](https://twodragon.tistory.com/705)
 
+---
 
-if __name__ == "__main__":
-    content = generate_profile_readme()
-    with open("PROFILE_README.md", "w", encoding="utf-8") as f:
-        f.write(content)
-    logger.info("GitHub Profile README 생성 완료: PROFILE_README.md")
+<p align="center">
+  <i>Last updated: 2025-01-27 12:00:00 KST</i>
+</p>
 

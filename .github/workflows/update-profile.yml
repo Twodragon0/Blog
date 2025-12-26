@@ -1,0 +1,68 @@
+name: Update GitHub Profile README
+
+on:
+  schedule:
+    # 매일 한국시간 오전 9시에 실행 (UTC 00:00)
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 수동 실행 가능
+  push:
+    branches:
+      - main
+    paths:
+      - 'profile_readme_generator.py'
+
+jobs:
+  update-profile-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      # 다른 저장소에 쓰기 권한이 필요하므로 PAT 사용 필요
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+    
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Generate Profile README
+        run: |
+          python profile_readme_generator.py
+        continue-on-error: true
+      
+      - name: Check for changes
+        id: verify-changed-files
+        run: |
+          if [ -f "PROFILE_README.md" ]; then
+            echo "file_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "file_exists=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Display Profile README
+        if: steps.verify-changed-files.outputs.file_exists == 'true'
+        run: |
+          echo "## Generated Profile README"
+          echo ""
+          cat PROFILE_README.md
+          echo ""
+          echo "## Instructions"
+          echo "1. Create a repository named 'Twodragon0' (same as your username)"
+          echo "2. Copy the content from PROFILE_README.md to that repository's README.md"
+          echo "3. Or use GitHub API to update it automatically (requires PAT)"
+      
+      - name: No changes
+        if: steps.verify-changed-files.outputs.file_exists == 'false'
+        run: |
+          echo "Profile README generation failed. Check logs above."
+
