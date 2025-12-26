@@ -15,9 +15,7 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
-    # 보안 업데이트는 자동 병합
-    allow:
-      - dependency-type: "security"
+    # 보안 업데이트는 Dependabot이 자동으로 처리합니다
     # 개발 의존성은 별도 관리
     ignore:
       - dependency-name: "*"
