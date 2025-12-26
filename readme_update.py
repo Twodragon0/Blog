@@ -246,7 +246,7 @@ markdown_text = """
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=peterica&theme=radical&hide_border=true" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com/?user=peterica&theme=radical" alt="GitHub Streak" />
 </div>
 
 ###  💁 About Me  
