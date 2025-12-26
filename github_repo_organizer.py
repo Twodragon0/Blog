@@ -86,7 +86,8 @@ def list_repositories(owner: str) -> List[Dict]:
         return []
     
     try:
-        cmd = GITHUB_CLI_COMMANDS["list"].format(owner=owner)
+        # Public과 Private 모두 포함
+        cmd = f"gh repo list {owner} --limit 100 --json name,isArchived,isFork,isPrivate,description"
         result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
         
         if result.returncode == 0:
@@ -225,7 +226,8 @@ def main():
         for repo in repos:
             status = "📦 Archived" if repo.get('isArchived') else "✅ Active"
             fork_status = "🔀 Forked" if repo.get('isFork') else "⭐ Original"
-            print(f"  {status} {fork_status} {repo.get('name')}")
+            private_status = "🔒 Private" if repo.get('isPrivate') else "🌐 Public"
+            print(f"  {status} {fork_status} {private_status} {repo.get('name')}")
     
     print("\n" + "="*60)
     print("정리 작업을 시작하시겠습니까?")
@@ -234,6 +236,7 @@ def main():
     print("다음 작업이 수행됩니다:")
     print("1. 포크된 저장소 Archive 처리 (audit-points, prowler, DevSecOps)")
     print("2. 저장소 이름 변경 (AWS → aws-iam-policies)")
+    print("3. Private 저장소 통합 (online-course, crypto 제외)")
     print()
     print("⚠️  주의: 이 작업은 되돌릴 수 없습니다!")
     print()
@@ -251,10 +254,14 @@ def main():
     print("  python github_repo_organizer.py --auto")
     print()
     print("또는 수동으로 다음 명령어를 실행하세요:")
+    print("  # Public 저장소 정리")
     print("  gh repo archive Twodragon0/audit-points")
     print("  gh repo archive Twodragon0/prowler")
     print("  gh repo archive Twodragon0/DevSecOps")
     print("  gh repo rename Twodragon0/AWS aws-iam-policies")
+    print()
+    print("  # Private 저장소 통합")
+    print("  python consolidate_private_repos.py --auto")
 
 
 if __name__ == "__main__":
