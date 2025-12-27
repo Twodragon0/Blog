@@ -1,143 +1,113 @@
 # Security Policy
 
-## 🛡️ Supported Versions
+## Supported Versions
 
-현재 프로젝트의 보안 업데이트 지원 버전:
+We actively support security updates for the following versions:
 
 | Version | Supported          |
 | ------- | ------------------ |
 | Latest  | :white_check_mark: |
-| < Latest| :x:                |
+| < Latest | :x:                |
 
-## 🔒 Reporting a Vulnerability
+## Reporting a Vulnerability
 
-### 취약점 신고 방법
+**Please do not report security vulnerabilities through public GitHub issues.**
 
-보안 취약점을 발견하셨다면, 다음 방법으로 신고해주세요:
+Instead, please report them via one of the following methods:
 
-1. **이메일**: twodragon114@gmail.com
-   - 제목에 `[SECURITY]` 접두사를 포함해주세요
-   - 가능한 한 상세한 정보를 제공해주세요:
-     - 취약점 유형 및 영향 범위
-     - 재현 단계
-     - 잠재적 영향
-     - 제안하는 해결 방법 (있는 경우)
+### Preferred Method: Private Security Advisory
 
-2. **응답 시간**
-   - 초기 응답: 48시간 이내
-   - 취약점 확인: 7일 이내
-   - 패치 배포: 심각도에 따라 결정
+1. Go to the repository's **Security** tab
+2. Click on **"Advisories"**
+3. Click **"New draft security advisory"**
+4. Fill out the advisory form with:
+   - A clear, descriptive title
+   - A description of the vulnerability
+   - Affected versions
+   - Steps to reproduce (if applicable)
+   - Suggested fix or mitigation
 
-3. **보안 연구자 가이드라인**
-   - 책임감 있는 공개 원칙을 준수해주세요
-   - 취약점을 악용하지 마세요
-   - 공개 전에 충분한 패치 시간을 제공해주세요
+### Alternative Method: Email
 
-## 🔐 Security Best Practices
+If you prefer to report via email, please send details to:
 
-### OWASP Top 10 2025 준수
+- **Email**: twodragon114@gmail.com
+- **Subject**: `[SECURITY] Repository Name - Vulnerability Description`
 
-이 프로젝트는 다음 보안 원칙을 준수합니다:
+### What to Include
 
-1. **Broken Access Control (접근 제어)**
-   - 모든 외부 입력에 대한 검증
-   - URL 화이트리스트 기반 접근 제어
-   - 최소 권한 원칙 적용
+When reporting a vulnerability, please include:
 
-2. **Injection Prevention (인젝션 방지)**
-   - HTML 이스케이프 처리
-   - URL 검증 및 화이트리스트
-   - 안전한 파일 처리
+- **Type of vulnerability** (e.g., XSS, SQL injection, authentication bypass)
+- **Affected component** (file, function, endpoint)
+- **Steps to reproduce** (if applicable)
+- **Potential impact** (data exposure, privilege escalation, etc.)
+- **Suggested fix** (if you have one)
 
-3. **Security Misconfiguration (보안 설정 오류)**
-   - 기본 설정의 보안 강화
-   - 불필요한 기능 비활성화
-   - 정기적인 의존성 업데이트
+## Security Best Practices
 
-### 코드 보안 가이드라인
+### For Contributors
 
-#### 입력 검증
-- 모든 외부 입력은 검증되어야 합니다
-- URL은 화이트리스트 기반으로 검증됩니다
-- HTML 콘텐츠는 이스케이프 처리됩니다
+- **Never commit secrets**: API keys, passwords, tokens, or any sensitive information
+- **Use environment variables**: Store sensitive configuration in environment variables
+- **Validate input**: Always validate and sanitize user input
+- **Follow OWASP guidelines**: Adhere to OWASP Top 10 security best practices
+- **Keep dependencies updated**: Regularly update dependencies to patch vulnerabilities
+- **Use parameterized queries**: Prevent SQL injection attacks
+- **Implement proper authentication**: Use secure authentication mechanisms
+- **Encrypt sensitive data**: Encrypt data at rest and in transit
 
-#### 파일 처리
-- 파일 경로 검증 (Path Traversal 방지)
-- 안전한 파일 쓰기 (원자적 연산)
-- 임시 파일 정리
+### For Maintainers
 
-#### 에러 처리
-- 민감한 정보 노출 방지
-- 적절한 로깅 및 모니터링
-- 예외 상황 처리
+- **Regular security audits**: Conduct regular security reviews
+- **Dependency scanning**: Use Dependabot to monitor dependencies
+- **Code scanning**: Enable GitHub CodeQL for automated security scanning
+- **Access control**: Follow principle of least privilege
+- **Security updates**: Promptly address and release security patches
+- **Documentation**: Document security considerations in code and documentation
 
-## 📦 Dependency Security
+## Disclosure Policy
 
-### Dependabot
+1. **Initial Report**: Security vulnerabilities should be reported privately
+2. **Acknowledgment**: We will acknowledge receipt within 48 hours
+3. **Investigation**: We will investigate and verify the vulnerability
+4. **Fix Development**: We will develop a fix for supported versions
+5. **Disclosure**: After a fix is available, we will:
+   - Release a security advisory
+   - Credit the reporter (if desired)
+   - Update the changelog
 
-이 프로젝트는 GitHub Dependabot을 사용하여 의존성 보안 업데이트를 자동으로 관리합니다:
+## Security Updates
 
-- **Python 패키지**: 주간 스캔 및 업데이트
-- **보안 취약점**: 자동 감지 및 알림
-- **업데이트 정책**: 자동 병합 (테스트 통과 시)
+Security updates will be released as:
+- **Critical**: Within 24-48 hours
+- **High**: Within 1 week
+- **Medium**: Within 2 weeks
+- **Low**: Within 1 month
 
-### 수동 의존성 점검
+## Security Tools
 
-정기적으로 다음 명령어로 의존성을 점검하세요:
+This repository uses the following security tools:
 
-```bash
-# 보안 취약점 스캔
-pip-audit
+- **GitHub Dependabot**: Automated dependency vulnerability scanning
+- **GitHub CodeQL**: Automated code security analysis
+- **Secret Scanning**: Automated detection of exposed secrets
+- **Dependency Review**: Automated review of dependency changes
 
-# 의존성 업데이트 확인
-pip list --outdated
-```
+## Additional Resources
 
-## 🔍 Security Scanning
-
-### 정기 보안 점검
-
-- **주간**: Dependabot 자동 스캔
-- **월간**: 수동 보안 감사
-- **분기별**: 종합 보안 검토
-
-### 사용 중인 도구
-
-- **GitHub Dependabot**: 의존성 취약점 스캔
-- **CodeQL**: 정적 코드 분석 (설정 시)
-- **Bandit**: Python 보안 린터 (권장)
-
-## 🚨 Incident Response
-
-### 보안 사고 대응 절차
-
-1. **감지**: 취약점 또는 침해 사고 감지
-2. **격리**: 영향 범위 최소화
-3. **분석**: 취약점 분석 및 영향 평가
-4. **수정**: 패치 개발 및 테스트
-5. **배포**: 안전한 패치 배포
-6. **문서화**: 사고 보고서 작성
-
-### 공개 정책
-
-- **심각도 높음**: 즉시 패치 배포 후 공개
-- **심각도 중간**: 패치 배포 후 30일 이내 공개
-- **심각도 낮음**: 다음 정기 업데이트 시 공개
-
-## 📚 Additional Resources
-
-- [OWASP Top 10 2025](https://owasp.org/www-project-top-ten/)
-- [Python Security Best Practices](https://python.readthedocs.io/en/stable/library/security.html)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 - [GitHub Security Best Practices](https://docs.github.com/en/code-security)
+- [AWS Security Best Practices](https://aws.amazon.com/architecture/security-identity-compliance/)
 
-## 📝 Changelog
+## Contact
 
-### 2025-01-XX
-- 초기 보안 정책 수립
-- Dependabot 통합
-- 입력 검증 강화
-- HTML 이스케이프 처리 추가
+For security-related questions or concerns, please contact:
+
+- **GitHub**: [@Twodragon0](https://github.com/Twodragon0)
+- **Email**: twodragon114@gmail.com
 
 ---
 
-**마지막 업데이트**: 2025-01-XX
+**Last updated**: 2025-12-27
+

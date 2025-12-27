@@ -1,6 +1,9 @@
+# Dependabot 설정
+# 의존성 취약점 자동 감지 및 업데이트
+
 version: 2
 updates:
-  # Python 의존성 업데이트
+  # Python 의존성 (pip)
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
@@ -8,28 +11,41 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 10
+    reviewers:
+      - "Twodragon0"
     labels:
       - "dependencies"
       - "python"
-      - "security"
     commit-message:
       prefix: "chore"
       include: "scope"
-    # 보안 업데이트는 Dependabot이 자동으로 처리합니다
-    # 개발 의존성은 별도 관리
+    # 보안 업데이트는 즉시 처리
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
     ignore:
+      # 특정 패키지는 수동으로 관리
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
-    # 보안 취약점은 즉시 업데이트 (minor, patch 업데이트 그룹화)
-    groups:
-      security-updates:
-        patterns:
-          - "*"
-        update-types:
-          - "minor"
-          - "patch"
 
-  # GitHub Actions 업데이트
+  # npm 의존성 (Node.js)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "Twodragon0"
+    labels:
+      - "dependencies"
+      - "javascript"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # GitHub Actions 의존성
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -37,10 +53,11 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    reviewers:
+      - "Twodragon0"
     labels:
       - "dependencies"
       - "github-actions"
-      - "security"
     commit-message:
       prefix: "chore"
       include: "scope"

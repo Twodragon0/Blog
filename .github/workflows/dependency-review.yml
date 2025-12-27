@@ -1,0 +1,27 @@
+name: "Dependency Review"
+
+on:
+  pull_request:
+    branches: [ "main", "master", "develop" ]
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Dependency Review
+        uses: actions/dependency-review-action@v4
+        with:
+          # 실패할 심각도 레벨
+          fail-on-severity: moderate
+          # 알려진 취약점이 있는 의존성 추가 시 실패
+          deny-licenses: GPL-2.0, GPL-3.0
+          # 허용할 라이선스
+          allow-licenses: MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC
+
