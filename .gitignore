@@ -45,3 +45,9 @@ logs/
 *.tmp
 *.bak
 *.swp
+
+# Generated Blog Directory
+tech-blog/
+
+# OpenCode Internal
+.omc/
