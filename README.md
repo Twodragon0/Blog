@@ -71,5 +71,5 @@ A curious researcher on future development through IT | DevSecOps Engineer | Clo
 ---
 
 <p align="center">
-  <i>Last updated: 2026-05-31 00:25:12 KST</i>
+  <i>Last updated: 2026-06-01 00:24:28 KST</i>
 </p>
