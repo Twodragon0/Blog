@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Dependency Review
-        uses: actions/dependency-review-action@v4
+        uses: actions/dependency-review-action@v5
         with:
           # 실패할 심각도 레벨
           fail-on-severity: moderate
