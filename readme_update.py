@@ -18,7 +18,7 @@ import html
 import time
 import socket
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Tuple
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
@@ -31,7 +31,26 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # 허용된 블로그 도메인 (화이트리스트)
-ALLOWED_DOMAINS = ['twodragon.tistory.com', '2twodragon.com']
+ALLOWED_DOMAINS = ['twodragon.tistory.com', '2twodragon.com', 'tech.2twodragon.com']
+
+# 수집할 피드 URL. 블로그마다 피드 경로가 달라서 `<url>/rss` 로 조립하지 않고 명시한다.
+#
+# 2026-09-11 실측:
+#   https://twodragon.tistory.com/rss      200 · 30건
+#   https://tech.2twodragon.com/feed.xml   200 · 50건
+#   https://2twodragon.com/rss             200 이지만 HTML 을 돌려준다 · 0건
+#   https://2twodragon.com/feed(/)         200 · 0건
+# 즉 2twodragon.com 은 피드가 꺼져 있다. `/rss` 를 붙이면 HTML 을 받아 feedparser 가
+# bozo 로 처리하고 3회 재시도 후 빈 리스트를 내놓는다 — 조용히 실패하므로 아예 뺀다.
+# 링크로는 계속 소개하되 수집 대상은 아니다.
+# (표시 이름, 블로그 URL, 피드 URL)
+BLOG_FEEDS = [
+    ('Tech Blog', 'https://tech.2twodragon.com', 'https://tech.2twodragon.com/feed.xml'),
+    ('Tistory', 'https://twodragon.tistory.com', 'https://twodragon.tistory.com/rss'),
+]
+
+# 블로그 한 곳당 README 에 실을 포스트 수
+POSTS_PER_BLOG = 10
 
 # 최대 수집할 포스트 수
 MAX_POSTS = 30
@@ -76,32 +95,43 @@ def validate_url(url: str) -> bool:
 def sanitize_html(text: str) -> str:
     """
     HTML 특수문자 이스케이프 처리 (XSS 방지)
-    
+
+    **먼저 풀고 나서 한 번만 조인다.** 그냥 `html.escape` 만 하면 이미 인코딩된 피드
+    제목이 두 번 조여진다 — Tistory 의 `Docker &amp; Kubernetes` 가 `&amp;amp;` 가 돼
+    README 에 `Docker &amp; Kubernetes` 로 그대로 보였다 (2026-09-11 실측).
+    피드마다 인코딩 횟수가 달라서, 더 안 풀릴 때까지 풀어 정규화한 뒤 한 번 조인다.
+
     Args:
         text: 이스케이프할 텍스트
-        
+
     Returns:
-        이스케이프된 텍스트
+        정확히 한 번 이스케이프된 텍스트
     """
-    return html.escape(text)
+    previous = None
+    current = text
+    # 중첩 인코딩을 모두 벗긴다. 고정점에 닿으면 멈춘다
+    while current != previous:
+        previous = current
+        current = html.unescape(current)
+    # 마크다운 링크 텍스트로 들어가므로 따옴표는 건드리지 않는다
+    return html.escape(current, quote=False)
 
 
-def fetch_blog_posts(blog_url: str) -> List[Dict[str, str]]:
+def fetch_blog_posts(rss_url: str) -> List[Dict[str, str]]:
     """
     블로그 RSS 피드에서 포스트 목록을 가져옵니다.
     재시도 로직과 타임아웃 처리가 포함되어 있습니다.
-    
+
     Args:
-        blog_url: 블로그 URL
-        
+        rss_url: 피드 URL 전체 (`BLOG_FEEDS` 참고). 경로를 여기서 조립하지 않는다
+
     Returns:
         포스트 정보 딕셔너리 리스트
     """
-    if not validate_url(blog_url):
-        logger.error(f"유효하지 않은 URL: {blog_url}")
+    if not validate_url(rss_url):
+        logger.error(f"유효하지 않은 URL: {rss_url}")
         return []
-    
-    rss_url = f"{blog_url}/rss"
+
     logger.info(f"RSS 피드 수집 중: {rss_url}")
     
     # 재시도 로직
@@ -226,20 +256,35 @@ def merge_and_sort_posts(posts_list: List[List[Dict[str, str]]]) -> List[Dict[st
     return unique_posts[:MAX_POSTS]
 
 
-def generate_readme_content(posts: List[Dict[str, str]]) -> str:
+def generate_readme_content(
+    posts_by_source: List[Tuple[str, str, List[Dict[str, str]]]]
+) -> str:
     """
     README.md 내용을 생성합니다.
-    
+
     Args:
-        posts: 포스트 정보 리스트
-        
+        posts_by_source: `(블로그 이름, 블로그 URL, 포스트 리스트)` 튜플의 리스트.
+            합쳐진 하나의 리스트가 아니라 **출처별로 나뉜** 형태를 받는다 — 이유는
+            아래 렌더링 루프의 주석 참고
+
     Returns:
         생성된 마크다운 내용
     """
     markdown_text = """
-# Hi there, I'm Twodragon 👋
+# Blog — RSS collector
 
-A curious researcher on future development through IT | DevSecOps Engineer | Cloud Security Specialist
+This repository is the **automation**, not the blog. It pulls posts from the feeds below
+and regenerates this README on a schedule.
+
+| Where | What | Feed |
+|---|---|---|
+| [tech.2twodragon.com](https://tech.2twodragon.com) | Tech blog — Jekyll, built from [`tech-blog`](https://github.com/Twodragon0/tech-blog) | `/feed.xml` ✅ |
+| [twodragon.tistory.com](https://twodragon.tistory.com) | Main blog | `/rss` ✅ |
+| [2twodragon.com](https://2twodragon.com) | Personal site | no feed — **not collected** |
+
+👤 **Profile:** [github.com/Twodragon0](https://github.com/Twodragon0) — the profile README
+lives in [`Twodragon0/Twodragon0`](https://github.com/Twodragon0/Twodragon0) and pulls the
+same feeds itself. This repo does **not** write to it.
 
 ### 🐱 GitHub Stats
 
@@ -256,8 +301,9 @@ A curious researcher on future development through IT | DevSecOps Engineer | Clo
 ### 💁 About Me
 
 <p align="center">
-  <a href="https://twodragon.tistory.com/"><img src="https://img.shields.io/badge/Blog-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
-  <a href="https://2twodragon.com/"><img src="https://img.shields.io/badge/Blog-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
+  <a href="https://tech.2twodragon.com/"><img src="https://img.shields.io/badge/Tech%20Blog-0A0A0A?style=flat-square&logo=Jekyll&logoColor=white"/></a>
+  <a href="https://twodragon.tistory.com/"><img src="https://img.shields.io/badge/Tistory-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
+  <a href="https://2twodragon.com/"><img src="https://img.shields.io/badge/Site-4A4A4A?style=flat-square&logo=WordPress&logoColor=white"/></a>
   <a href="mailto:twodragon114@gmail.com"><img src="https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white"/></a>
   <a href="https://github.com/Twodragon0"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/></a>
 </p>
@@ -276,11 +322,22 @@ A curious researcher on future development through IT | DevSecOps Engineer | Clo
 ### 📝 Recent Blog Posts
 
 """
-    
-    for idx, post in enumerate(posts, 1):
-        # HTML 이스케이프는 이미 처리되었으므로 안전하게 사용
-        markdown_text += f"{idx}. [{post['title']}]({post['link']})\n"
-    
+
+    # 블로그별로 나눠 싣는다.
+    #
+    # 두 피드를 한 리스트로 합쳐 최신순 상위 N건만 자르면 **한쪽 블로그가 통째로 사라진다.**
+    # 2026-09-11 실측 — Tistory 최신글은 2026-02-06, tech.2twodragon.com 은 2026-09-13 이라
+    # 합친 상위 30건이 전부 후자로 채워졌다. 정렬 버그가 아니라 갱신 주기가 다른 것이고,
+    # 그래서 잘라내기가 아니라 나눠 싣기로 푼다.
+    for label, url, source_posts in posts_by_source:
+        if not source_posts:
+            continue
+        markdown_text += f"**[{label}]({url})**\n\n"
+        for idx, post in enumerate(source_posts[:POSTS_PER_BLOG], 1):
+            # HTML 이스케이프는 수집 시점에 처리되었으므로 안전하게 사용
+            markdown_text += f"{idx}. [{post['title']}]({post['link']})\n"
+        markdown_text += "\n"
+
     markdown_text += "\n---\n\n"
     markdown_text += "<p align=\"center\">\n"
     markdown_text += "  <i>Last updated: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S KST") + "</i>\n"
@@ -338,40 +395,36 @@ def write_readme(content: str, output_path: str = "README.md") -> bool:
 
 def main():
     """메인 실행 함수"""
-    blog_urls = [
-        "https://twodragon.tistory.com",
-        "https://2twodragon.com"
-    ]
-    
     logger.info("블로그 포스트 수집 시작")
-    
-    # 각 블로그에서 포스트 수집
-    all_posts = []
-    for blog_url in blog_urls:
-        posts = fetch_blog_posts(blog_url)
+
+    # 각 블로그에서 포스트 수집 — 출처를 유지한 채로 담는다
+    posts_by_source = []
+    for label, blog_url, feed_url in BLOG_FEEDS:
+        posts = fetch_blog_posts(feed_url)
         if posts:
-            all_posts.append(posts)
-    
-    if not all_posts:
+            # 블로그 안에서만 최신순으로 정렬한다 (블로그 간 비교는 하지 않는다)
+            posts = merge_and_sort_posts([posts])
+            posts_by_source.append((label, blog_url, posts))
+        else:
+            # 한 피드가 죽어도 나머지로 계속 간다. 다만 조용히 넘기지는 않는다 —
+            # 2twodragon.com 이 정확히 이렇게 몇 달을 0건으로 돌았다.
+            logger.warning(f"피드에서 수집된 포스트가 0건이다: {feed_url}")
+
+    if not posts_by_source:
         logger.error("수집된 포스트가 없습니다.")
         sys.exit(1)
-    
-    # 포스트 병합 및 정렬
-    merged_posts = merge_and_sort_posts(all_posts)
-    
-    if not merged_posts:
-        logger.error("병합된 포스트가 없습니다.")
-        sys.exit(1)
-    
+
     # README 내용 생성
-    readme_content = generate_readme_content(merged_posts)
-    
+    readme_content = generate_readme_content(posts_by_source)
+
     # README 파일 작성
     if not write_readme(readme_content):
         logger.error("README.md 작성 실패")
         sys.exit(1)
-    
-    logger.info(f"총 {len(merged_posts)}개의 포스트로 README.md 업데이트 완료")
+
+    total = sum(len(p) for _, _, p in posts_by_source)
+    summary = ' · '.join(f"{label} {len(p)}건" for label, _, p in posts_by_source)
+    logger.info(f"README.md 업데이트 완료 — 총 {total}건 ({summary})")
 
 
 if __name__ == "__main__":

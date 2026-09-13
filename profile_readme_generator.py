@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 """
-GitHub Profile README 생성 스크립트
-Twodragon0 프로필 페이지용 README.md를 생성합니다.
+GitHub Profile README 생성 스크립트 — **더 이상 쓰지 않는다 (2026-09-11 퇴역).**
+
+프로필 README 는 https://github.com/Twodragon0/Twodragon0 리포가 직접 소유하고,
+거기서 자기 워크플로로 피드를 읽어 갱신한다. 이 스크립트를 돌리던
+`.github/workflows/update-profile.yml` 은 제거했다 — 자세한 경위는 `PROFILE_README.md`.
+
+참고용으로만 남겨 둔다. 다시 살릴 일이 있으면 아래 두 가지를 먼저 고쳐야 한다.
+  1. `Twodragon0/AWS` 핀 — 그 리포는 `aws-devsecops-infrastructure` 로 개명돼 카드가 깨진다
+  2. `2twodragon.com` — 피드가 없다. `/rss`·`/feed`·`/feed/` 모두 200 이지만 <item> 0건
+     (2026-09-11 실측). 대신 `tech.2twodragon.com/feed.xml` 을 쓴다
 """
 
 import feedparser

@@ -1,7 +1,18 @@
 
-# Hi there, I'm Twodragon 👋
+# Blog — RSS collector
 
-A curious researcher on future development through IT | DevSecOps Engineer | Cloud Security Specialist
+This repository is the **automation**, not the blog. It pulls posts from the feeds below
+and regenerates this README on a schedule.
+
+| Where | What | Feed |
+|---|---|---|
+| [tech.2twodragon.com](https://tech.2twodragon.com) | Tech blog — Jekyll, built from [`tech-blog`](https://github.com/Twodragon0/tech-blog) | `/feed.xml` ✅ |
+| [twodragon.tistory.com](https://twodragon.tistory.com) | Main blog | `/rss` ✅ |
+| [2twodragon.com](https://2twodragon.com) | Personal site | no feed — **not collected** |
+
+👤 **Profile:** [github.com/Twodragon0](https://github.com/Twodragon0) — the profile README
+lives in [`Twodragon0/Twodragon0`](https://github.com/Twodragon0/Twodragon0) and pulls the
+same feeds itself. This repo does **not** write to it.
 
 ### 🐱 GitHub Stats
 
@@ -18,8 +29,9 @@ A curious researcher on future development through IT | DevSecOps Engineer | Clo
 ### 💁 About Me
 
 <p align="center">
-  <a href="https://twodragon.tistory.com/"><img src="https://img.shields.io/badge/Blog-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
-  <a href="https://2twodragon.com/"><img src="https://img.shields.io/badge/Blog-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
+  <a href="https://tech.2twodragon.com/"><img src="https://img.shields.io/badge/Tech%20Blog-0A0A0A?style=flat-square&logo=Jekyll&logoColor=white"/></a>
+  <a href="https://twodragon.tistory.com/"><img src="https://img.shields.io/badge/Tistory-FF5722?style=flat-square&logo=Blogger&logoColor=white"/></a>
+  <a href="https://2twodragon.com/"><img src="https://img.shields.io/badge/Site-4A4A4A?style=flat-square&logo=WordPress&logoColor=white"/></a>
   <a href="mailto:twodragon114@gmail.com"><img src="https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white"/></a>
   <a href="https://github.com/Twodragon0"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/></a>
 </p>
@@ -37,9 +49,24 @@ A curious researcher on future development through IT | DevSecOps Engineer | Clo
 
 ### 📝 Recent Blog Posts
 
+**[Tech Blog](https://tech.2twodragon.com)**
+
+1. [2026년 09월 13일 주간 보안 다이제스트: 제로데이·클라우드·AI 에이전트 (18건)](https://tech.2twodragon.com/posts/2026/09/13/Tech_Security_Weekly_Digest_AWS_AI_Agent_Data/)
+2. [2026년 09월 12일 주간 보안 다이제스트: AI 에이전트·BYOVD EDR·악성코드 (27건)](https://tech.2twodragon.com/posts/2026/09/12/Tech_Security_Weekly_Digest_Data_AI_AWS_Malware/)
+3. [2026년 09월 11일 주간 보안 다이제스트: 클라우드·랜섬웨어·악성코드 (30건)](https://tech.2twodragon.com/posts/2026/09/11/Tech_Security_Weekly_Digest_AWS_Threat_Go_Malware/)
+4. [2026년 09월 10일 주간 보안 다이제스트: 쿠버네티스·클라우드·AI 에이전트 (30건)](https://tech.2twodragon.com/posts/2026/09/10/Tech_Security_Weekly_Digest_Cloud_Threat_AI_Security/)
+5. [2026년 09월 09일 주간 보안 다이제스트: 쿠버네티스·AI 에이전트·보안 위협 (30건)](https://tech.2twodragon.com/posts/2026/09/09/Tech_Security_Weekly_Digest_API_Bitcoin_AI_GPT/)
+6. [2026년 09월 08일 주간 보안 다이제스트: 쿠버네티스·제로데이·클라우드 (23건)](https://tech.2twodragon.com/posts/2026/09/08/Tech_Security_Weekly_Digest_Data_AI_Cloud_Security/)
+7. [2026년 09월 07일 주간 보안 다이제스트: 패치·악성코드·AI 에이전트 (20건)](https://tech.2twodragon.com/posts/2026/09/07/Tech_Security_Weekly_Digest_Patch_Go_GPT_Update/)
+8. [2026년 09월 04일 주간 보안 다이제스트: 악성코드·클라우드·제로데이 (30건)](https://tech.2twodragon.com/posts/2026/09/04/Tech_Security_Weekly_Digest_AI_Malware_Rust/)
+9. [Kubernetes 환경에서의 eBPF 기반 Tetragon 실시간 런타임 보안 정책 및 위협 차단 아키텍처](https://tech.2twodragon.com/posts/2026/09/03/eBPF_Tetragon_Kubernetes_Runtime_Security_Architecture/)
+10. [2026년 09월 03일 주간 보안 다이제스트: AI 에이전트·클라우드·패치 (19건)](https://tech.2twodragon.com/posts/2026/09/03/Tech_Security_Weekly_Digest_AI_Agent_Go_Update/)
+
+**[Tistory](https://twodragon.tistory.com)**
+
 1. [클라우드 보안 과정 8기 9주차: DevSecOps 통합 및 AI 기반 보안 자동화](https://twodragon.tistory.com/710)
 2. [클라우드 보안 과정 8기 8주차: CI/CD와 Kubernetes 보안 실전 가이드 - DevSecOps 파이프라인부터 클러스터 보안까지](https://twodragon.tistory.com/709)
-3. [클라우드 보안 과정 8기 7주차: Docker &amp;amp; Kubernetes 보안 실전 가이드 - 컨테이너 보안부터 클러스터 보안까지](https://twodragon.tistory.com/708)
+3. [클라우드 보안 과정 8기 7주차: Docker &amp; Kubernetes 보안 실전 가이드 - 컨테이너 보안부터 클러스터 보안까지](https://twodragon.tistory.com/708)
 4. [클라우드 보안 과정 8기 6주차: AWS WAF/CloudFront 보안 아키텍처 및 GitHub DevSecOps 실전](https://twodragon.tistory.com/707)
 5. [클라우드 시큐리티 과정 8기 5주차: AWS Control Tower/SCP 기반 거버넌스 및 Datadog SIEM, Cloudflare 보안](https://twodragon.tistory.com/706)
 6. [클라우드 시큐리티 8기 4주차: 통합 보안 취약점 점검 및 ISMS-P 인증 대응 실무](https://twodragon.tistory.com/705)
@@ -47,29 +74,10 @@ A curious researcher on future development through IT | DevSecOps Engineer | Clo
 8. [클라우드 시큐리티 8기 3주차: AWS FinOps 아키텍처부터 ISMS-P 보안 감사까지 완벽 공략!](https://twodragon.tistory.com/703)
 9. [클라우드 시큐리티 8기 2주차: AWS 보안 아키텍처의 핵심, VPC부터 GuardDuty까지 완벽 정복!](https://twodragon.tistory.com/702)
 10. [클라우드 시큐리티 8기 1주차: 인프라의 본질부터 보안의 미래까지](https://twodragon.tistory.com/701)
-11. [클라우드 시큐리티 8기 OT 안내: DevSecOps부터 FinOps까지, 실무형 인재로 도약하라!](https://twodragon.tistory.com/700)
-12. [[Post-Mortem] 2025년 11월 18일 Cloudflare 글로벌 장애 대응 일지: 우리는 무엇을 배웠나](https://twodragon.tistory.com/699)
-13. [Zscaler 완벽 가이드: SSL 검사, 샌드박스, AI, 광고, 유해 사이트 완벽 차단](https://twodragon.tistory.com/698)
-14. [AI 시대, 당신의 &amp;lsquo;비서&amp;rsquo;가 &amp;lsquo;보안 구멍&amp;rsquo;이 되지 않도록: 기업을 위한 AI 서비스 보안 가이드](https://twodragon.tistory.com/697)
-15. [AWS에서 안전한 데이터베이스 접근 게이트웨이 구축하기: NLB + Security Group 완벽 가이드](https://twodragon.tistory.com/696)
-16. [Karpenter v1.5.3 노드 통합으로 인한 대규모 장애 분석 및 해결기](https://twodragon.tistory.com/695)
-17. [NPM &amp;quot;Shai-Hulud&amp;quot; 자가 복제 웜 공격: 180개 이상 패키지 침해된 대규모 공급망 공격 완전 분석](https://twodragon.tistory.com/694)
-18. [AWS re:Inforce 2025: 클라우드 보안의 현재와 미래  ️](https://twodragon.tistory.com/693)
-19. [[긴급] npm 생태계 대규모 보안 침해: 20억 다운로드 패키지 악성코드 감염](https://twodragon.tistory.com/692)
-20. [클라우드 시큐리티 과정 7기 - 9주차 DevSecOps 통합 정리](https://twodragon.tistory.com/691)
-21. [DevOps에서 오토스케일링까지: Karpenter와 KEDA의 실전 활용법](https://twodragon.tistory.com/690)
-22. [클라우드 시큐리티 과정 7기 - 8주차 CI/CD와 Kubernetes 보안 실전 가이드](https://twodragon.tistory.com/689)
-23. [이메일 발송 신뢰도 높이기: SendGrid SPF, DKIM, DMARC 설정 완벽 가이드](https://twodragon.tistory.com/688)
-24. [Kubernetes Minikube &amp;amp; K9s 실습 가이드: 문제 해결부터 실전 테스트까지](https://twodragon.tistory.com/687)
-25. [클라우드 시큐리티 과정 7기 - 7주차 Docker 및 Kubernetes 이해](https://twodragon.tistory.com/686)
-26. [Amazon Q Developer와 GitHub Advanced Security를 활용한 코드 보안 강화 및 AWS 최적화](https://twodragon.tistory.com/685)
-27. [클라우드 시큐리티 과정 7기 - 6주차 Cloudflare 및 github 보안](https://twodragon.tistory.com/684)
-28. [클라우드 시큐리티 과정 7기 - 5주차 AWS Control Tower 및 ZTNA](https://twodragon.tistory.com/683)
-29. [클라우드 보안 과정 7기 - 4주차 AWS 취약점 점검 및 ISMS 대응 가이드](https://twodragon.tistory.com/682)
-30. [지하철 vs 전기차(테슬라 포함), 시간, 비용, 가치 비교](https://twodragon.tistory.com/681)
+
 
 ---
 
 <p align="center">
-  <i>Last updated: 2026-09-13 01:52:27 KST</i>
+  <i>Last updated: 2026-09-13 14:39:04 KST</i>
 </p>
