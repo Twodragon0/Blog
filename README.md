@@ -51,16 +51,16 @@ same feeds itself. This repo does **not** write to it.
 
 **[Tech Blog](https://tech.2twodragon.com)**
 
-1. [2026년 09월 13일 주간 보안 다이제스트: 제로데이·클라우드·AI 에이전트 (18건)](https://tech.2twodragon.com/posts/2026/09/13/Tech_Security_Weekly_Digest_AWS_AI_Agent_Data/)
-2. [2026년 09월 12일 주간 보안 다이제스트: AI 에이전트·BYOVD EDR·악성코드 (27건)](https://tech.2twodragon.com/posts/2026/09/12/Tech_Security_Weekly_Digest_Data_AI_AWS_Malware/)
-3. [2026년 09월 11일 주간 보안 다이제스트: 클라우드·랜섬웨어·악성코드 (30건)](https://tech.2twodragon.com/posts/2026/09/11/Tech_Security_Weekly_Digest_AWS_Threat_Go_Malware/)
-4. [2026년 09월 10일 주간 보안 다이제스트: 쿠버네티스·클라우드·AI 에이전트 (30건)](https://tech.2twodragon.com/posts/2026/09/10/Tech_Security_Weekly_Digest_Cloud_Threat_AI_Security/)
-5. [2026년 09월 09일 주간 보안 다이제스트: 쿠버네티스·AI 에이전트·보안 위협 (30건)](https://tech.2twodragon.com/posts/2026/09/09/Tech_Security_Weekly_Digest_API_Bitcoin_AI_GPT/)
-6. [2026년 09월 08일 주간 보안 다이제스트: 쿠버네티스·제로데이·클라우드 (23건)](https://tech.2twodragon.com/posts/2026/09/08/Tech_Security_Weekly_Digest_Data_AI_Cloud_Security/)
-7. [2026년 09월 07일 주간 보안 다이제스트: 패치·악성코드·AI 에이전트 (20건)](https://tech.2twodragon.com/posts/2026/09/07/Tech_Security_Weekly_Digest_Patch_Go_GPT_Update/)
-8. [2026년 09월 04일 주간 보안 다이제스트: 악성코드·클라우드·제로데이 (30건)](https://tech.2twodragon.com/posts/2026/09/04/Tech_Security_Weekly_Digest_AI_Malware_Rust/)
-9. [Kubernetes 환경에서의 eBPF 기반 Tetragon 실시간 런타임 보안 정책 및 위협 차단 아키텍처](https://tech.2twodragon.com/posts/2026/09/03/eBPF_Tetragon_Kubernetes_Runtime_Security_Architecture/)
-10. [2026년 09월 03일 주간 보안 다이제스트: AI 에이전트·클라우드·패치 (19건)](https://tech.2twodragon.com/posts/2026/09/03/Tech_Security_Weekly_Digest_AI_Agent_Go_Update/)
+1. [2026년 09월 14일 주간 보안 다이제스트: DNS 유출·클라우드·제로데이 (18건)](https://tech.2twodragon.com/posts/2026/09/14/Tech_Security_Weekly_Digest_Cloud_Data_Malware_AI/)
+2. [2026년 09월 13일 주간 보안 다이제스트: 제로데이·클라우드·AI 에이전트 (18건)](https://tech.2twodragon.com/posts/2026/09/13/Tech_Security_Weekly_Digest_AWS_AI_Agent_Data/)
+3. [2026년 09월 12일 주간 보안 다이제스트: AI 에이전트·BYOVD EDR·악성코드 (27건)](https://tech.2twodragon.com/posts/2026/09/12/Tech_Security_Weekly_Digest_Data_AI_AWS_Malware/)
+4. [2026년 09월 11일 주간 보안 다이제스트: 클라우드·랜섬웨어·악성코드 (30건)](https://tech.2twodragon.com/posts/2026/09/11/Tech_Security_Weekly_Digest_AWS_Threat_Go_Malware/)
+5. [2026년 09월 10일 주간 보안 다이제스트: 쿠버네티스·클라우드·AI 에이전트 (30건)](https://tech.2twodragon.com/posts/2026/09/10/Tech_Security_Weekly_Digest_Cloud_Threat_AI_Security/)
+6. [2026년 09월 09일 주간 보안 다이제스트: 쿠버네티스·AI 에이전트·보안 위협 (30건)](https://tech.2twodragon.com/posts/2026/09/09/Tech_Security_Weekly_Digest_API_Bitcoin_AI_GPT/)
+7. [2026년 09월 08일 주간 보안 다이제스트: 쿠버네티스·제로데이·클라우드 (23건)](https://tech.2twodragon.com/posts/2026/09/08/Tech_Security_Weekly_Digest_Data_AI_Cloud_Security/)
+8. [2026년 09월 07일 주간 보안 다이제스트: 패치·악성코드·AI 에이전트 (20건)](https://tech.2twodragon.com/posts/2026/09/07/Tech_Security_Weekly_Digest_Patch_Go_GPT_Update/)
+9. [2026년 09월 04일 주간 보안 다이제스트: 악성코드·클라우드·제로데이 (30건)](https://tech.2twodragon.com/posts/2026/09/04/Tech_Security_Weekly_Digest_AI_Malware_Rust/)
+10. [Kubernetes 환경에서의 eBPF 기반 Tetragon 실시간 런타임 보안 정책 및 위협 차단 아키텍처](https://tech.2twodragon.com/posts/2026/09/03/eBPF_Tetragon_Kubernetes_Runtime_Security_Architecture/)
 
 **[Tistory](https://twodragon.tistory.com)**
 
@@ -79,5 +79,5 @@ same feeds itself. This repo does **not** write to it.
 ---
 
 <p align="center">
-  <i>Last updated: 2026-09-14 02:05:33 KST</i>
+  <i>Last updated: 2026-09-15 02:12:43 KST</i>
 </p>
