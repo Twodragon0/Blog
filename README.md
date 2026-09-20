@@ -51,16 +51,16 @@ same feeds itself. This repo does **not** write to it.
 
 **[Tech Blog](https://tech.2twodragon.com)**
 
-1. [2026년 09월 18일 주간 보안 다이제스트: BYOVD EDR·AI 에이전트·클라우드 (30건)](https://tech.2twodragon.com/posts/2026/09/18/Tech_Security_Weekly_Digest_Cloud_AWS_AI_Malware/)
-2. [2026년 09월 17일 주간 보안 다이제스트: 제로데이·클라우드·랜섬웨어 (30건)](https://tech.2twodragon.com/posts/2026/09/17/Tech_Security_Weekly_Digest_Cloud_AWS_Threat_Ransomware/)
-3. [2026년 09월 16일 주간 보안 다이제스트: 악성코드·클라우드·AI 에이전트 (30건)](https://tech.2twodragon.com/posts/2026/09/16/Tech_Security_Weekly_Digest_ML_Malware_AWS/)
-4. [2026년 09월 15일 주간 보안 다이제스트: DNS 유출·패치·AI 에이전트 (29건)](https://tech.2twodragon.com/posts/2026/09/15/Tech_Security_Weekly_Digest_ML_Update_Go/)
-5. [2026년 09월 14일 주간 보안 다이제스트: DNS 유출·클라우드·제로데이 (18건)](https://tech.2twodragon.com/posts/2026/09/14/Tech_Security_Weekly_Digest_Cloud_Data_Malware_AI/)
-6. [2026년 09월 13일 주간 보안 다이제스트: 제로데이·클라우드·AI 에이전트 (18건)](https://tech.2twodragon.com/posts/2026/09/13/Tech_Security_Weekly_Digest_AWS_AI_Agent_Data/)
-7. [2026년 09월 12일 주간 보안 다이제스트: AI 에이전트·BYOVD EDR·악성코드 (27건)](https://tech.2twodragon.com/posts/2026/09/12/Tech_Security_Weekly_Digest_Data_AI_AWS_Malware/)
-8. [2026년 09월 11일 주간 보안 다이제스트: 클라우드·랜섬웨어·악성코드 (30건)](https://tech.2twodragon.com/posts/2026/09/11/Tech_Security_Weekly_Digest_AWS_Threat_Go_Malware/)
-9. [2026년 09월 10일 주간 보안 다이제스트: 쿠버네티스·클라우드·AI 에이전트 (30건)](https://tech.2twodragon.com/posts/2026/09/10/Tech_Security_Weekly_Digest_Cloud_Threat_AI_Security/)
-10. [2026년 09월 09일 주간 보안 다이제스트: 쿠버네티스·AI 에이전트·보안 위협 (30건)](https://tech.2twodragon.com/posts/2026/09/09/Tech_Security_Weekly_Digest_API_Bitcoin_AI_GPT/)
+1. [2026년 09월 19일 주간 보안 다이제스트: 클라우드·패치·제로데이 (30건)](https://tech.2twodragon.com/posts/2026/09/19/Tech_Security_Weekly_Digest_AWS_AI_Rust_Patch/)
+2. [2026년 09월 18일 주간 보안 다이제스트: BYOVD EDR·AI 에이전트·클라우드 (30건)](https://tech.2twodragon.com/posts/2026/09/18/Tech_Security_Weekly_Digest_Cloud_AWS_AI_Malware/)
+3. [2026년 09월 17일 주간 보안 다이제스트: 제로데이·클라우드·랜섬웨어 (30건)](https://tech.2twodragon.com/posts/2026/09/17/Tech_Security_Weekly_Digest_Cloud_AWS_Threat_Ransomware/)
+4. [2026년 09월 16일 주간 보안 다이제스트: 악성코드·클라우드·AI 에이전트 (30건)](https://tech.2twodragon.com/posts/2026/09/16/Tech_Security_Weekly_Digest_ML_Malware_AWS/)
+5. [2026년 09월 15일 주간 보안 다이제스트: DNS 유출·패치·AI 에이전트 (29건)](https://tech.2twodragon.com/posts/2026/09/15/Tech_Security_Weekly_Digest_ML_Update_Go/)
+6. [2026년 09월 14일 주간 보안 다이제스트: DNS 유출·클라우드·제로데이 (18건)](https://tech.2twodragon.com/posts/2026/09/14/Tech_Security_Weekly_Digest_Cloud_Data_Malware_AI/)
+7. [2026년 09월 13일 주간 보안 다이제스트: 제로데이·클라우드·AI 에이전트 (18건)](https://tech.2twodragon.com/posts/2026/09/13/Tech_Security_Weekly_Digest_AWS_AI_Agent_Data/)
+8. [2026년 09월 12일 주간 보안 다이제스트: AI 에이전트·BYOVD EDR·악성코드 (27건)](https://tech.2twodragon.com/posts/2026/09/12/Tech_Security_Weekly_Digest_Data_AI_AWS_Malware/)
+9. [2026년 09월 11일 주간 보안 다이제스트: 클라우드·랜섬웨어·악성코드 (30건)](https://tech.2twodragon.com/posts/2026/09/11/Tech_Security_Weekly_Digest_AWS_Threat_Go_Malware/)
+10. [2026년 09월 10일 주간 보안 다이제스트: 쿠버네티스·클라우드·AI 에이전트 (30건)](https://tech.2twodragon.com/posts/2026/09/10/Tech_Security_Weekly_Digest_Cloud_Threat_AI_Security/)
 
 **[Tistory](https://twodragon.tistory.com)**
 
@@ -79,5 +79,5 @@ same feeds itself. This repo does **not** write to it.
 ---
 
 <p align="center">
-  <i>Last updated: 2026-09-19 02:00:46 KST</i>
+  <i>Last updated: 2026-09-20 02:04:48 KST</i>
 </p>
