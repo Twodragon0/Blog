@@ -51,33 +51,33 @@ same feeds itself. This repo does **not** write to it.
 
 **[Tech Blog](https://tech.2twodragon.com)**
 
-1. [2026년 10월 07일 주간 보안 다이제스트: 클라우드·AI 에이전트·클라우드 보안 (30건)](https://tech.2twodragon.com/posts/2026/10/07/Tech_Security_Weekly_Digest_GPT_AI_Security_AWS/)
-2. [2026년 10월 06일 주간 보안 다이제스트: 제로데이·패치·AI 에이전트 (26건)](https://tech.2twodragon.com/posts/2026/10/06/Tech_Security_Weekly_Digest_AI_AWS_Security_Ransomware/)
-3. [2026년 10월 05일 주간 보안 다이제스트: 제로데이·패치·AI 에이전트 (15건)](https://tech.2twodragon.com/posts/2026/10/05/Tech_Security_Weekly_Digest_Zero-Day_Patch_ML_AI/)
-4. [2026년 10월 04일 주간 보안 다이제스트: 제로데이·패치·보안 위협 (16건)](https://tech.2twodragon.com/posts/2026/10/04/Tech_Security_Weekly_Digest_Zero-Day_ML_Update_AI/)
-5. [2026년 10월 01일 주간 보안 다이제스트: 제로데이·패치·Cisco FMC (30건)](https://tech.2twodragon.com/posts/2026/10/01/Tech_Security_Weekly_Digest_GPT_Security/)
-6. [2026년 09월 30일 주간 보안 다이제스트: 클라우드 보안·보안 위협·AI (28건)](https://tech.2twodragon.com/posts/2026/09/30/Tech_Security_Weekly_Digest_Data_AI_GPT/)
-7. [2026년 09월 29일 주간 보안 다이제스트: 제로데이·패치·악성코드 (29건)](https://tech.2twodragon.com/posts/2026/09/29/Tech_Security_Weekly_Digest_Patch_Apple_AI_Agent/)
-8. [2026년 09월 28일 주간 보안 다이제스트: 제로데이·클라우드·패치 (16건)](https://tech.2twodragon.com/posts/2026/09/28/Tech_Security_Weekly_Digest_AI_GPT_Zero-Day_Cloud/)
-9. [2026년 09월 27일 주간 보안 다이제스트: 제로데이·클라우드·패치 (15건)](https://tech.2twodragon.com/posts/2026/09/27/Tech_Security_Weekly_Digest_Zero-Day_Patch_Security_AI/)
-10. [2026년 09월 26일 주간 보안 다이제스트: 악성코드·제로데이·클라우드 (29건)](https://tech.2twodragon.com/posts/2026/09/26/Tech_Security_Weekly_Digest_AI_Malware_Zero-Day/)
+1. [2026년 10월 08일 주간 보안 다이제스트: 악성코드·클라우드·AI 에이전트 (28건)](https://tech.2twodragon.com/posts/2026/10/08/Tech_Security_Weekly_Digest_AI_Go_Vulnerability_Patch/)
+2. [2026년 10월 07일 주간 보안 다이제스트: 클라우드·AI 에이전트·클라우드 보안 (30건)](https://tech.2twodragon.com/posts/2026/10/07/Tech_Security_Weekly_Digest_GPT_AI_Security_AWS/)
+3. [2026년 10월 06일 주간 보안 다이제스트: 제로데이·패치·AI 에이전트 (26건)](https://tech.2twodragon.com/posts/2026/10/06/Tech_Security_Weekly_Digest_AI_AWS_Security_Ransomware/)
+4. [2026년 10월 05일 주간 보안 다이제스트: 제로데이·패치·AI 에이전트 (15건)](https://tech.2twodragon.com/posts/2026/10/05/Tech_Security_Weekly_Digest_Zero-Day_Patch_ML_AI/)
+5. [2026년 10월 04일 주간 보안 다이제스트: 제로데이·패치·보안 위협 (16건)](https://tech.2twodragon.com/posts/2026/10/04/Tech_Security_Weekly_Digest_Zero-Day_ML_Update_AI/)
+6. [2026년 10월 01일 주간 보안 다이제스트: 제로데이·패치·Cisco FMC (30건)](https://tech.2twodragon.com/posts/2026/10/01/Tech_Security_Weekly_Digest_GPT_Security/)
+7. [2026년 09월 30일 주간 보안 다이제스트: 클라우드 보안·보안 위협·AI (28건)](https://tech.2twodragon.com/posts/2026/09/30/Tech_Security_Weekly_Digest_Data_AI_GPT/)
+8. [2026년 09월 29일 주간 보안 다이제스트: 제로데이·패치·악성코드 (29건)](https://tech.2twodragon.com/posts/2026/09/29/Tech_Security_Weekly_Digest_Patch_Apple_AI_Agent/)
+9. [2026년 09월 28일 주간 보안 다이제스트: 제로데이·클라우드·패치 (16건)](https://tech.2twodragon.com/posts/2026/09/28/Tech_Security_Weekly_Digest_AI_GPT_Zero-Day_Cloud/)
+10. [2026년 09월 27일 주간 보안 다이제스트: 제로데이·클라우드·패치 (15건)](https://tech.2twodragon.com/posts/2026/09/27/Tech_Security_Weekly_Digest_Zero-Day_Patch_Security_AI/)
 
 **[Tistory](https://twodragon.tistory.com)**
 
-1. [클라우드 보안 과정 8기 9주차: DevSecOps 통합 및 AI 기반 보안 자동화](https://twodragon.tistory.com/710)
-2. [클라우드 보안 과정 8기 8주차: CI/CD와 Kubernetes 보안 실전 가이드 - DevSecOps 파이프라인부터 클러스터 보안까지](https://twodragon.tistory.com/709)
-3. [클라우드 보안 과정 8기 7주차: Docker &amp; Kubernetes 보안 실전 가이드 - 컨테이너 보안부터 클러스터 보안까지](https://twodragon.tistory.com/708)
-4. [클라우드 보안 과정 8기 6주차: AWS WAF/CloudFront 보안 아키텍처 및 GitHub DevSecOps 실전](https://twodragon.tistory.com/707)
-5. [클라우드 시큐리티 과정 8기 5주차: AWS Control Tower/SCP 기반 거버넌스 및 Datadog SIEM, Cloudflare 보안](https://twodragon.tistory.com/706)
-6. [클라우드 시큐리티 8기 4주차: 통합 보안 취약점 점검 및 ISMS-P 인증 대응 실무](https://twodragon.tistory.com/705)
-7. [[12월 컨퍼런스 회고] AWSKRUG, OWASP, Datadog으로 미리 보는 2025년: AI와 보안의 공존](https://twodragon.tistory.com/704)
-8. [클라우드 시큐리티 8기 3주차: AWS FinOps 아키텍처부터 ISMS-P 보안 감사까지 완벽 공략!](https://twodragon.tistory.com/703)
-9. [클라우드 시큐리티 8기 2주차: AWS 보안 아키텍처의 핵심, VPC부터 GuardDuty까지 완벽 정복!](https://twodragon.tistory.com/702)
-10. [클라우드 시큐리티 8기 1주차: 인프라의 본질부터 보안의 미래까지](https://twodragon.tistory.com/701)
+1. [클라우드 시큐리티 9기 OT: AI 시대의 DevSecOps, GPU 인프라, 그리고 대체 불가능한 보안 거버넌스](https://twodragon.tistory.com/711)
+2. [클라우드 보안 과정 8기 9주차: DevSecOps 통합 및 AI 기반 보안 자동화](https://twodragon.tistory.com/710)
+3. [클라우드 보안 과정 8기 8주차: CI/CD와 Kubernetes 보안 실전 가이드 - DevSecOps 파이프라인부터 클러스터 보안까지](https://twodragon.tistory.com/709)
+4. [클라우드 보안 과정 8기 7주차: Docker &amp; Kubernetes 보안 실전 가이드 - 컨테이너 보안부터 클러스터 보안까지](https://twodragon.tistory.com/708)
+5. [클라우드 보안 과정 8기 6주차: AWS WAF/CloudFront 보안 아키텍처 및 GitHub DevSecOps 실전](https://twodragon.tistory.com/707)
+6. [클라우드 시큐리티 과정 8기 5주차: AWS Control Tower/SCP 기반 거버넌스 및 Datadog SIEM, Cloudflare 보안](https://twodragon.tistory.com/706)
+7. [클라우드 시큐리티 8기 4주차: 통합 보안 취약점 점검 및 ISMS-P 인증 대응 실무](https://twodragon.tistory.com/705)
+8. [[12월 컨퍼런스 회고] AWSKRUG, OWASP, Datadog으로 미리 보는 2025년: AI와 보안의 공존](https://twodragon.tistory.com/704)
+9. [클라우드 시큐리티 8기 3주차: AWS FinOps 아키텍처부터 ISMS-P 보안 감사까지 완벽 공략!](https://twodragon.tistory.com/703)
+10. [클라우드 시큐리티 8기 2주차: AWS 보안 아키텍처의 핵심, VPC부터 GuardDuty까지 완벽 정복!](https://twodragon.tistory.com/702)
 
 
 ---
 
 <p align="center">
-  <i>Last updated: 2026-10-08 03:19:58 KST</i>
+  <i>Last updated: 2026-10-09 03:25:49 KST</i>
 </p>
