@@ -51,16 +51,16 @@ same feeds itself. This repo does **not** write to it.
 
 **[Tech Blog](https://tech.2twodragon.com)**
 
-1. [Istio Ambient Mesh ztunnel L4 mTLS와 Waypoint L7 무사이드카 보안 아키텍처](https://tech.2twodragon.com/posts/2026/10/13/Istio_Ambient_Mesh_ztunnel_L4_mTLS_Waypoint_Proxy_Architecture/)
-2. [Sigstore Cosign v3 키리스 OIDC 서명과 SLSA Level 3 공급망 무결성 체계](https://tech.2twodragon.com/posts/2026/10/13/Sigstore_Cosign_v3_Keyless_OIDC_Signing_SLSA_Level_3_Supply_Chain_Security/)
-3. [Cilium Tetragon 실시간 커널 레벨 런타임 격리와 인커널 SIGKILL 플레이북](https://tech.2twodragon.com/posts/2026/10/13/Cilium_Tetragon_Kernel_Level_Runtime_Enforcement_SIGKILL_Playbook/)
-4. [2026년 10월 13일 주간 보안 다이제스트: 제로데이·랜섬웨어·악성코드 (30건)](https://tech.2twodragon.com/posts/2026/10/13/Tech_Security_Weekly_Digest_Threat_AI_Malware_ML/)
-5. [2026년 10월 12일 주간 보안 다이제스트: 악성코드·패치·블록체인 (11건)](https://tech.2twodragon.com/posts/2026/10/12/Tech_Security_Weekly_Digest_Malware_Patch_AI_Bitcoin/)
-6. [AI Agent MCP 제로 트러스트 샌드박싱과 mTLS 런타임 보안 아키텍처](https://tech.2twodragon.com/posts/2026/10/12/AI_Agent_MCP_Zero_Trust_Sandboxing_mTLS_Runtime_Security/)
-7. [2026년 10월 11일 주간 보안 다이제스트: AI 에이전트·클라우드·패치 (17건)](https://tech.2twodragon.com/posts/2026/10/11/Tech_Security_Weekly_Digest_AI_Security_Agent_AWS/)
-8. [2026년 10월 10일 주간 보안 다이제스트: 패치·AI 에이전트·BYOVD EDR (27건)](https://tech.2twodragon.com/posts/2026/10/10/Tech_Security_Weekly_Digest_Data_Security_AI_Threat/)
-9. [2026년 10월 09일 주간 보안 다이제스트: 클라우드·랜섬웨어·DNS 유출 (28건)](https://tech.2twodragon.com/posts/2026/10/09/Tech_Security_Weekly_Digest_AI_Threat_Ransomware_Data/)
-10. [2026년 10월 08일 주간 보안 다이제스트: 악성코드·클라우드·AI 에이전트 (28건)](https://tech.2twodragon.com/posts/2026/10/08/Tech_Security_Weekly_Digest_AI_Go_Vulnerability_Patch/)
+1. [2026년 10월 14일 주간 보안 다이제스트: 악성코드·AI 에이전트·클라우드 (29건)](https://tech.2twodragon.com/posts/2026/10/14/Tech_Security_Weekly_Digest_AI_Botnet_Docker_Go/)
+2. [Istio Ambient Mesh ztunnel L4 mTLS와 Waypoint L7 무사이드카 보안 아키텍처](https://tech.2twodragon.com/posts/2026/10/13/Istio_Ambient_Mesh_ztunnel_L4_mTLS_Waypoint_Proxy_Architecture/)
+3. [Sigstore Cosign v3 키리스 OIDC 서명과 SLSA Level 3 공급망 무결성 체계](https://tech.2twodragon.com/posts/2026/10/13/Sigstore_Cosign_v3_Keyless_OIDC_Signing_SLSA_Level_3_Supply_Chain_Security/)
+4. [Cilium Tetragon 실시간 커널 레벨 런타임 격리와 인커널 SIGKILL 플레이북](https://tech.2twodragon.com/posts/2026/10/13/Cilium_Tetragon_Kernel_Level_Runtime_Enforcement_SIGKILL_Playbook/)
+5. [2026년 10월 13일 주간 보안 다이제스트: 제로데이·랜섬웨어·악성코드 (30건)](https://tech.2twodragon.com/posts/2026/10/13/Tech_Security_Weekly_Digest_Threat_AI_Malware_ML/)
+6. [2026년 10월 12일 주간 보안 다이제스트: 악성코드·패치·블록체인 (11건)](https://tech.2twodragon.com/posts/2026/10/12/Tech_Security_Weekly_Digest_Malware_Patch_AI_Bitcoin/)
+7. [AI Agent MCP 제로 트러스트 샌드박싱과 mTLS 런타임 보안 아키텍처](https://tech.2twodragon.com/posts/2026/10/12/AI_Agent_MCP_Zero_Trust_Sandboxing_mTLS_Runtime_Security/)
+8. [2026년 10월 11일 주간 보안 다이제스트: AI 에이전트·클라우드·패치 (17건)](https://tech.2twodragon.com/posts/2026/10/11/Tech_Security_Weekly_Digest_AI_Security_Agent_AWS/)
+9. [2026년 10월 10일 주간 보안 다이제스트: 패치·AI 에이전트·BYOVD EDR (27건)](https://tech.2twodragon.com/posts/2026/10/10/Tech_Security_Weekly_Digest_Data_Security_AI_Threat/)
+10. [2026년 10월 09일 주간 보안 다이제스트: 클라우드·랜섬웨어·DNS 유출 (28건)](https://tech.2twodragon.com/posts/2026/10/09/Tech_Security_Weekly_Digest_AI_Threat_Ransomware_Data/)
 
 **[Tistory](https://twodragon.tistory.com)**
 
@@ -79,5 +79,5 @@ same feeds itself. This repo does **not** write to it.
 ---
 
 <p align="center">
-  <i>Last updated: 2026-10-14 02:28:20 KST</i>
+  <i>Last updated: 2026-10-15 02:09:10 KST</i>
 </p>
