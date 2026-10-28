@@ -51,16 +51,16 @@ same feeds itself. This repo does **not** write to it.
 
 **[Tech Blog](https://tech.2twodragon.com)**
 
-1. [2026년 10월 26일 주간 보안 다이제스트: 클라우드·악성코드·BYOVD EDR (21건)](https://tech.2twodragon.com/posts/2026/10/26/Tech_Security_Weekly_Digest_AI_Malware_Agent/)
-2. [2026년 10월 25일 주간 보안 다이제스트: BYOVD EDR·제로데이·블록체인 (15건)](https://tech.2twodragon.com/posts/2026/10/25/Tech_Security_Weekly_Digest_AI_Bitcoin/)
-3. [2026년 10월 24일 주간 보안 다이제스트: 제로데이·AI 에이전트·패치 (25건)](https://tech.2twodragon.com/posts/2026/10/24/Tech_Security_Weekly_Digest_LLM_AI_Data_Go/)
-4. [Falco 0.38 Modern eBPF 런타임 위협 탐지와 K8s 자동 격리 체계](https://tech.2twodragon.com/posts/2026/10/17/Falco_0_38_Modern_eBPF_Runtime_Threat_Detection_K8s_Automated_Response/)
-5. [2026년 10월 16일 주간 보안 다이제스트: 제로데이·클라우드·DNS 유출 (30건)](https://tech.2twodragon.com/posts/2026/10/16/Tech_Security_Weekly_Digest_Vulnerability_AI_Threat_Go/)
-6. [2026년 10월 14일 주간 보안 다이제스트: 악성코드·AI 에이전트·클라우드 (29건)](https://tech.2twodragon.com/posts/2026/10/14/Tech_Security_Weekly_Digest_AI_Botnet_Docker_Go/)
-7. [Istio Ambient Mesh ztunnel L4 mTLS와 Waypoint L7 무사이드카 보안 아키텍처](https://tech.2twodragon.com/posts/2026/10/13/Istio_Ambient_Mesh_ztunnel_L4_mTLS_Waypoint_Proxy_Architecture/)
-8. [Sigstore Cosign v3 키리스 OIDC 서명과 SLSA Level 3 공급망 무결성 체계](https://tech.2twodragon.com/posts/2026/10/13/Sigstore_Cosign_v3_Keyless_OIDC_Signing_SLSA_Level_3_Supply_Chain_Security/)
-9. [Cilium Tetragon 실시간 커널 레벨 런타임 격리와 인커널 SIGKILL 플레이북](https://tech.2twodragon.com/posts/2026/10/13/Cilium_Tetragon_Kernel_Level_Runtime_Enforcement_SIGKILL_Playbook/)
-10. [2026년 10월 13일 주간 보안 다이제스트: 제로데이·랜섬웨어·악성코드 (30건)](https://tech.2twodragon.com/posts/2026/10/13/Tech_Security_Weekly_Digest_Threat_AI_Malware_ML/)
+1. [2026년 10월 27일 주간 보안 다이제스트: 제로데이·패치·랜섬웨어 (25건)](https://tech.2twodragon.com/posts/2026/10/27/Tech_Security_Weekly_Digest_Agent_Update_Security_Malware/)
+2. [2026년 10월 26일 주간 보안 다이제스트: 클라우드·악성코드·BYOVD EDR (21건)](https://tech.2twodragon.com/posts/2026/10/26/Tech_Security_Weekly_Digest_AI_Malware_Agent/)
+3. [2026년 10월 25일 주간 보안 다이제스트: BYOVD EDR·제로데이·블록체인 (15건)](https://tech.2twodragon.com/posts/2026/10/25/Tech_Security_Weekly_Digest_AI_Bitcoin/)
+4. [2026년 10월 24일 주간 보안 다이제스트: 제로데이·AI 에이전트·패치 (25건)](https://tech.2twodragon.com/posts/2026/10/24/Tech_Security_Weekly_Digest_LLM_AI_Data_Go/)
+5. [Falco 0.38 Modern eBPF 런타임 위협 탐지와 K8s 자동 격리 체계](https://tech.2twodragon.com/posts/2026/10/17/Falco_0_38_Modern_eBPF_Runtime_Threat_Detection_K8s_Automated_Response/)
+6. [2026년 10월 16일 주간 보안 다이제스트: 제로데이·클라우드·DNS 유출 (30건)](https://tech.2twodragon.com/posts/2026/10/16/Tech_Security_Weekly_Digest_Vulnerability_AI_Threat_Go/)
+7. [2026년 10월 14일 주간 보안 다이제스트: 악성코드·AI 에이전트·클라우드 (29건)](https://tech.2twodragon.com/posts/2026/10/14/Tech_Security_Weekly_Digest_AI_Botnet_Docker_Go/)
+8. [Istio Ambient Mesh ztunnel L4 mTLS와 Waypoint L7 무사이드카 보안 아키텍처](https://tech.2twodragon.com/posts/2026/10/13/Istio_Ambient_Mesh_ztunnel_L4_mTLS_Waypoint_Proxy_Architecture/)
+9. [Sigstore Cosign v3 키리스 OIDC 서명과 SLSA Level 3 공급망 무결성 체계](https://tech.2twodragon.com/posts/2026/10/13/Sigstore_Cosign_v3_Keyless_OIDC_Signing_SLSA_Level_3_Supply_Chain_Security/)
+10. [Cilium Tetragon 실시간 커널 레벨 런타임 격리와 인커널 SIGKILL 플레이북](https://tech.2twodragon.com/posts/2026/10/13/Cilium_Tetragon_Kernel_Level_Runtime_Enforcement_SIGKILL_Playbook/)
 
 **[Tistory](https://twodragon.tistory.com)**
 
@@ -79,5 +79,5 @@ same feeds itself. This repo does **not** write to it.
 ---
 
 <p align="center">
-  <i>Last updated: 2026-10-27 02:42:37 KST</i>
+  <i>Last updated: 2026-10-28 02:51:27 KST</i>
 </p>
