@@ -64,20 +64,20 @@ same feeds itself. This repo does **not** write to it.
 
 **[Tistory](https://twodragon.tistory.com)**
 
-1. [클라우드 시큐리티 9기 1주차 : 온프레미스 vs 클라우드 네트워크 아키텍처 비교부터 제로 트러스트 &amp; DevSecOps 핵심 정리](https://twodragon.tistory.com/712)
-2. [클라우드 시큐리티 9기 OT: AI 시대의 DevSecOps, GPU 인프라, 그리고 대체 불가능한 보안 거버넌스](https://twodragon.tistory.com/711)
-3. [클라우드 보안 과정 8기 9주차: DevSecOps 통합 및 AI 기반 보안 자동화](https://twodragon.tistory.com/710)
-4. [클라우드 보안 과정 8기 8주차: CI/CD와 Kubernetes 보안 실전 가이드 - DevSecOps 파이프라인부터 클러스터 보안까지](https://twodragon.tistory.com/709)
-5. [클라우드 보안 과정 8기 7주차: Docker &amp; Kubernetes 보안 실전 가이드 - 컨테이너 보안부터 클러스터 보안까지](https://twodragon.tistory.com/708)
-6. [클라우드 보안 과정 8기 6주차: AWS WAF/CloudFront 보안 아키텍처 및 GitHub DevSecOps 실전](https://twodragon.tistory.com/707)
-7. [클라우드 시큐리티 과정 8기 5주차: AWS Control Tower/SCP 기반 거버넌스 및 Datadog SIEM, Cloudflare 보안](https://twodragon.tistory.com/706)
-8. [클라우드 시큐리티 8기 4주차: 통합 보안 취약점 점검 및 ISMS-P 인증 대응 실무](https://twodragon.tistory.com/705)
-9. [[12월 컨퍼런스 회고] AWSKRUG, OWASP, Datadog으로 미리 보는 2025년: AI와 보안의 공존](https://twodragon.tistory.com/704)
-10. [클라우드 시큐리티 8기 3주차: AWS FinOps 아키텍처부터 ISMS-P 보안 감사까지 완벽 공략!](https://twodragon.tistory.com/703)
+1. [클라우드 시큐리티 9기 2주차: AWS 네트워크·보안 아키텍처와 FinOps, 데이터센터·CPU·GPU까지](https://twodragon.tistory.com/713)
+2. [클라우드 시큐리티 9기 1주차 : 온프레미스 vs 클라우드 네트워크 아키텍처 비교부터 제로 트러스트 &amp; DevSecOps 핵심 정리](https://twodragon.tistory.com/712)
+3. [클라우드 시큐리티 9기 OT: AI 시대의 DevSecOps, GPU 인프라, 그리고 대체 불가능한 보안 거버넌스](https://twodragon.tistory.com/711)
+4. [클라우드 보안 과정 8기 9주차: DevSecOps 통합 및 AI 기반 보안 자동화](https://twodragon.tistory.com/710)
+5. [클라우드 보안 과정 8기 8주차: CI/CD와 Kubernetes 보안 실전 가이드 - DevSecOps 파이프라인부터 클러스터 보안까지](https://twodragon.tistory.com/709)
+6. [클라우드 보안 과정 8기 7주차: Docker &amp; Kubernetes 보안 실전 가이드 - 컨테이너 보안부터 클러스터 보안까지](https://twodragon.tistory.com/708)
+7. [클라우드 보안 과정 8기 6주차: AWS WAF/CloudFront 보안 아키텍처 및 GitHub DevSecOps 실전](https://twodragon.tistory.com/707)
+8. [클라우드 시큐리티 과정 8기 5주차: AWS Control Tower/SCP 기반 거버넌스 및 Datadog SIEM, Cloudflare 보안](https://twodragon.tistory.com/706)
+9. [클라우드 시큐리티 8기 4주차: 통합 보안 취약점 점검 및 ISMS-P 인증 대응 실무](https://twodragon.tistory.com/705)
+10. [[12월 컨퍼런스 회고] AWSKRUG, OWASP, Datadog으로 미리 보는 2025년: AI와 보안의 공존](https://twodragon.tistory.com/704)
 
 
 ---
 
 <p align="center">
-  <i>Last updated: 2026-10-29 03:14:12 KST</i>
+  <i>Last updated: 2026-10-30 03:17:02 KST</i>
 </p>
