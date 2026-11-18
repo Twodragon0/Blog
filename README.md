@@ -51,16 +51,16 @@ same feeds itself. This repo does **not** write to it.
 
 **[Tech Blog](https://tech.2twodragon.com)**
 
-1. [2026년 11월 16일 주간 보안 다이제스트: 패치·AI 에이전트·클라우드 (19건)](https://tech.2twodragon.com/posts/2026/11/16/Tech_Security_Weekly_Digest_AI_Cloud_Data_Go/)
-2. [2026년 11월 15일 주간 보안 다이제스트: 제로데이·북한 위협·AI 에이전트 (15건)](https://tech.2twodragon.com/posts/2026/11/15/Tech_Security_Weekly_Digest_Security_AI_Bitcoin/)
-3. [2026년 11월 14일 주간 보안 다이제스트: 제로데이·클라우드·패치 (28건)](https://tech.2twodragon.com/posts/2026/11/14/Tech_Security_Weekly_Digest_Patch_AWS_Cloud_AI/)
-4. [2026년 11월 13일 주간 보안 다이제스트: 피싱·Linux 위협·클라우드 보안 (30건)](https://tech.2twodragon.com/posts/2026/11/13/Tech_Security_Weekly_Digest_Threat_Zero-Day_Security_AI/)
-5. [2026년 11월 12일 주간 보안 다이제스트: 제로데이·클라우드·패치 (30건)](https://tech.2twodragon.com/posts/2026/11/12/Tech_Security_Weekly_Digest_AI_AWS/)
-6. [2026년 11월 11일 주간 보안 다이제스트: 제로데이·패치·악성코드 (30건)](https://tech.2twodragon.com/posts/2026/11/11/Tech_Security_Weekly_Digest_Patch_AI_Agent_Data/)
-7. [2026년 11월 10일 주간 보안 다이제스트: 클라우드·악성코드·AI 에이전트 (29건)](https://tech.2twodragon.com/posts/2026/11/10/Tech_Security_Weekly_Digest_AWS_Data_Rust_Malware/)
-8. [2026년 11월 09일 주간 보안 다이제스트: 클라우드·BYOVD EDR·블록체인 (15건)](https://tech.2twodragon.com/posts/2026/11/09/Tech_Security_Weekly_Digest_Cloud_Data_Security_Agent/)
-9. [2026년 11월 08일 주간 보안 다이제스트: 제로데이·패치·쿠버네티스 (15건)](https://tech.2twodragon.com/posts/2026/11/08/Tech_Security_Weekly_Digest_AI_Rust_Vulnerability_Patch/)
-10. [2026년 11월 07일 주간 보안 다이제스트: AI 에이전트·패치·쿠버네티스 (30건)](https://tech.2twodragon.com/posts/2026/11/07/Tech_Security_Weekly_Digest_Kubernetes_Security_AI_AWS/)
+1. [2026년 11월 18일 주간 보안 다이제스트: 클라우드·제로데이·패치 (30건)](https://tech.2twodragon.com/posts/2026/11/18/Tech_Security_Weekly_Digest_AI_AWS_CVE_Patch/)
+2. [2026년 11월 16일 주간 보안 다이제스트: 패치·AI 에이전트·클라우드 (19건)](https://tech.2twodragon.com/posts/2026/11/16/Tech_Security_Weekly_Digest_AI_Cloud_Data_Go/)
+3. [2026년 11월 15일 주간 보안 다이제스트: 제로데이·북한 위협·AI 에이전트 (15건)](https://tech.2twodragon.com/posts/2026/11/15/Tech_Security_Weekly_Digest_Security_AI_Bitcoin/)
+4. [2026년 11월 14일 주간 보안 다이제스트: 제로데이·클라우드·패치 (28건)](https://tech.2twodragon.com/posts/2026/11/14/Tech_Security_Weekly_Digest_Patch_AWS_Cloud_AI/)
+5. [2026년 11월 13일 주간 보안 다이제스트: 피싱·Linux 위협·클라우드 보안 (30건)](https://tech.2twodragon.com/posts/2026/11/13/Tech_Security_Weekly_Digest_Threat_Zero-Day_Security_AI/)
+6. [2026년 11월 12일 주간 보안 다이제스트: 제로데이·클라우드·패치 (30건)](https://tech.2twodragon.com/posts/2026/11/12/Tech_Security_Weekly_Digest_AI_AWS/)
+7. [2026년 11월 11일 주간 보안 다이제스트: 제로데이·패치·악성코드 (30건)](https://tech.2twodragon.com/posts/2026/11/11/Tech_Security_Weekly_Digest_Patch_AI_Agent_Data/)
+8. [2026년 11월 10일 주간 보안 다이제스트: 클라우드·악성코드·AI 에이전트 (29건)](https://tech.2twodragon.com/posts/2026/11/10/Tech_Security_Weekly_Digest_AWS_Data_Rust_Malware/)
+9. [2026년 11월 09일 주간 보안 다이제스트: 클라우드·BYOVD EDR·블록체인 (15건)](https://tech.2twodragon.com/posts/2026/11/09/Tech_Security_Weekly_Digest_Cloud_Data_Security_Agent/)
+10. [2026년 11월 08일 주간 보안 다이제스트: 제로데이·패치·쿠버네티스 (15건)](https://tech.2twodragon.com/posts/2026/11/08/Tech_Security_Weekly_Digest_AI_Rust_Vulnerability_Patch/)
 
 **[Tistory](https://twodragon.tistory.com)**
 
@@ -79,5 +79,5 @@ same feeds itself. This repo does **not** write to it.
 ---
 
 <p align="center">
-  <i>Last updated: 2026-11-17 05:31:02 KST</i>
+  <i>Last updated: 2026-11-18 04:57:06 KST</i>
 </p>
